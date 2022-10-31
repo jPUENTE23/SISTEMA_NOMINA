@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace SISTEMA_NOMINA
 {
-    public partial class Form1 : Form
+    public partial class Form_Login : Form
     {
-        public Form1()
+        public Form_Login()
         {
             InitializeComponent();
+        }
+
+        private void btn_Ingresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
+            FormSeleccionarEmpr.Show();
+
         }
     }
 }
