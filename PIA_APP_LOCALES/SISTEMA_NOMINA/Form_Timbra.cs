@@ -30,13 +30,26 @@ namespace SISTEMA_NOMINA
             FormMenu.Show();
         }
 
+
+        //PERCEPCIONES
+
+        class ConceptosPercepciones
+        {
+            public string ConceptoPercepcion { get; set; }
+            public int Clave { get; set; }
+            public dynamic DescPercecepcion { get; set; }
+            public double Importe { get; set; }
+        }
+
         private void btn_AgregarPer_Click(object sender, EventArgs e)
         {
+
+            int indicePer = cb_Percepciones.SelectedIndex;
             List<ConceptosPercepciones> ConPercepciones = new List<ConceptosPercepciones>()
             {
                 new ConceptosPercepciones()
                 {
-                    ConceptoPercepcion = txt_Percepcion.Text,
+                    ConceptoPercepcion = cb_Percepciones.Items[indicePer].ToString(),
                     Clave = Convert.ToInt32(txt_ClavePer.Text),
                     DescPercecepcion = txt_DescPer.Text,
                     Importe = Convert.ToDouble(txt_ImportePer.Text)
@@ -53,17 +66,51 @@ namespace SISTEMA_NOMINA
                 dataGV_Percepciones.Rows[n].Cells[3].Value = dato.Importe;
             }
 
+            txt_ClavePer.Text = "";
+            txt_DescPer.Text = "";
+            txt_ImportePer.Text = "";
 
         }
 
+        
+        // DEDUCCIONES
 
-        class ConceptosPercepciones
+        class ConceptosDeducciones
         {
-            public string ConceptoPercepcion { get; set; }
+            public string ConceptoDeduccion { get; set; }
             public int Clave { get; set; }
-            public dynamic DescPercecepcion { get; set; }
+            public dynamic DescDeduccion { get; set; }
             public double Importe { get; set; }
         }
 
+        private void btn_AgregarDed_Click(object sender, EventArgs e)
+        {
+            int indicePer = cb_Deducciones.SelectedIndex;
+            List<ConceptosDeducciones> ConPercepciones = new List<ConceptosDeducciones>()
+            {
+                new ConceptosDeducciones()
+                {
+                    ConceptoDeduccion = cb_Deducciones.Items[indicePer].ToString(),
+                    Clave = Convert.ToInt32(txt_ClaveDed.Text),
+                    DescDeduccion = txt_DescDed.Text,
+                    Importe = Convert.ToDouble(txt_importeDed.Text)
+                }
+            };
+
+            int n = dataGV_Percepciones.Rows.Add();
+
+            foreach (dynamic dato in ConPercepciones)
+            {
+                dataGV_Deducciones.Rows[n].Cells[0].Value = dato.ConceptoDeduccion;
+                dataGV_Deducciones.Rows[n].Cells[1].Value = dato.Clave;
+                dataGV_Deducciones.Rows[n].Cells[2].Value = dato.DescDeduccion;
+                dataGV_Deducciones.Rows[n].Cells[3].Value = dato.Importe;
+            }
+
+            txt_ClaveDed.Text = "";
+            txt_DescDed.Text = "";
+            txt_importeDed.Text = "";
+
+        }
     }
 }
