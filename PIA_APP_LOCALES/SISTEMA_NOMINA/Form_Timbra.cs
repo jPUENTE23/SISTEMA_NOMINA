@@ -56,14 +56,14 @@ namespace SISTEMA_NOMINA
                 }
             };
 
-            int n = dataGV_Percepciones.Rows.Add();
+            int indexPercepciones = dataGV_Percepciones.Rows.Add();
 
             foreach (dynamic dato in ConPercepciones)
             {
-                dataGV_Percepciones.Rows[n].Cells[0].Value = dato.ConceptoPercepcion;
-                dataGV_Percepciones.Rows[n].Cells[1].Value = dato.Clave;
-                dataGV_Percepciones.Rows[n].Cells[2].Value = dato.DescPercecepcion;
-                dataGV_Percepciones.Rows[n].Cells[3].Value = dato.Importe;
+                dataGV_Percepciones.Rows[indexPercepciones].Cells[0].Value = dato.ConceptoPercepcion;
+                dataGV_Percepciones.Rows[indexPercepciones].Cells[1].Value = dato.Clave;
+                dataGV_Percepciones.Rows[indexPercepciones].Cells[2].Value = dato.DescPercecepcion;
+                dataGV_Percepciones.Rows[indexPercepciones].Cells[3].Value = dato.Importe;
             }
 
             txt_ClavePer.Text = "";
@@ -97,14 +97,14 @@ namespace SISTEMA_NOMINA
                 }
             };
 
-            int n = dataGV_Percepciones.Rows.Add();
+            int indexDeducciones = dataGV_Deducciones.Rows.Add();
 
             foreach (dynamic dato in ConPercepciones)
             {
-                dataGV_Deducciones.Rows[n].Cells[0].Value = dato.ConceptoDeduccion;
-                dataGV_Deducciones.Rows[n].Cells[1].Value = dato.Clave;
-                dataGV_Deducciones.Rows[n].Cells[2].Value = dato.DescDeduccion;
-                dataGV_Deducciones.Rows[n].Cells[3].Value = dato.Importe;
+                dataGV_Deducciones.Rows[indexDeducciones].Cells[0].Value = dato.ConceptoDeduccion;
+                dataGV_Deducciones.Rows[indexDeducciones].Cells[1].Value = dato.Clave;
+                dataGV_Deducciones.Rows[indexDeducciones].Cells[2].Value = dato.DescDeduccion;
+                dataGV_Deducciones.Rows[indexDeducciones].Cells[3].Value = dato.Importe;
             }
 
             txt_ClaveDed.Text = "";
