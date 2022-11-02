@@ -33,12 +33,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.txt_Contraseña = new System.Windows.Forms.Label();
             this.btn_Ingresar = new System.Windows.Forms.Button();
+            this.btn_conexion = new System.Windows.Forms.Button();
+            this.btn_CrearEmpr = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Usuario
             // 
             this.lbl_Usuario.AutoSize = true;
-            this.lbl_Usuario.Location = new System.Drawing.Point(57, 96);
+            this.lbl_Usuario.Location = new System.Drawing.Point(57, 33);
             this.lbl_Usuario.Name = "lbl_Usuario";
             this.lbl_Usuario.Size = new System.Drawing.Size(43, 13);
             this.lbl_Usuario.TabIndex = 0;
@@ -46,14 +48,14 @@
             // 
             // txt_Usuario
             // 
-            this.txt_Usuario.Location = new System.Drawing.Point(60, 136);
+            this.txt_Usuario.Location = new System.Drawing.Point(60, 73);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(240, 20);
             this.txt_Usuario.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(60, 226);
+            this.textBox2.Location = new System.Drawing.Point(60, 163);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(240, 20);
             this.textBox2.TabIndex = 3;
@@ -61,7 +63,7 @@
             // txt_Contraseña
             // 
             this.txt_Contraseña.AutoSize = true;
-            this.txt_Contraseña.Location = new System.Drawing.Point(57, 186);
+            this.txt_Contraseña.Location = new System.Drawing.Point(57, 123);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.Size = new System.Drawing.Size(61, 13);
             this.txt_Contraseña.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.Location = new System.Drawing.Point(60, 283);
+            this.btn_Ingresar.Location = new System.Drawing.Point(60, 216);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(240, 36);
             this.btn_Ingresar.TabIndex = 4;
@@ -77,11 +79,33 @@
             this.btn_Ingresar.UseVisualStyleBackColor = true;
             this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
             // 
+            // btn_conexion
+            // 
+            this.btn_conexion.Location = new System.Drawing.Point(60, 412);
+            this.btn_conexion.Name = "btn_conexion";
+            this.btn_conexion.Size = new System.Drawing.Size(240, 36);
+            this.btn_conexion.TabIndex = 5;
+            this.btn_conexion.Text = "Conectar";
+            this.btn_conexion.UseVisualStyleBackColor = true;
+            this.btn_conexion.Click += new System.EventHandler(this.btn_conexion_Click);
+            // 
+            // btn_CrearEmpr
+            // 
+            this.btn_CrearEmpr.Location = new System.Drawing.Point(60, 258);
+            this.btn_CrearEmpr.Name = "btn_CrearEmpr";
+            this.btn_CrearEmpr.Size = new System.Drawing.Size(240, 36);
+            this.btn_CrearEmpr.TabIndex = 6;
+            this.btn_CrearEmpr.Text = "Craear una nueva empresa";
+            this.btn_CrearEmpr.UseVisualStyleBackColor = true;
+            this.btn_CrearEmpr.Click += new System.EventHandler(this.btn_CrearEmpr_Click);
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 450);
+            this.ClientSize = new System.Drawing.Size(366, 540);
+            this.Controls.Add(this.btn_CrearEmpr);
+            this.Controls.Add(this.btn_conexion);
             this.Controls.Add(this.btn_Ingresar);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txt_Contraseña);
@@ -101,6 +125,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label txt_Contraseña;
         private System.Windows.Forms.Button btn_Ingresar;
+        private System.Windows.Forms.Button btn_conexion;
+        private System.Windows.Forms.Button btn_CrearEmpr;
     }
 }
 

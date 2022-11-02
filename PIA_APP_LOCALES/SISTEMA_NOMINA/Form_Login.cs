@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SISTEMA_NOMINA
 {
@@ -23,6 +24,20 @@ namespace SISTEMA_NOMINA
             Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
             FormSeleccionarEmpr.Show();
 
+        }
+
+        private void btn_conexion_Click(object sender, EventArgs e)
+        {
+            BD.ConexionSQL.Conexion myConn = new BD.ConexionSQL.Conexion();
+            myConn.AbrirConexioBD();
+            
+        }
+
+        private void btn_CrearEmpr_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_EmpresasCreadas FormEmpresasCraedas = new Form_EmpresasCreadas();
+            FormEmpresasCraedas.Show();
         }
     }
 }

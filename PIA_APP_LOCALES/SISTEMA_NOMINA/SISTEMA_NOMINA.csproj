@@ -46,7 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\ConexionSQL.cs" />
     <Compile Include="CLASES\Percepciones.cs" />
+    <Compile Include="Form_CrearEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CrearEmpresa.Designer.cs">
+      <DependentUpon>Form_CrearEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_EmpresasCreadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EmpresasCreadas.Designer.cs">
+      <DependentUpon>Form_EmpresasCreadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +86,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_CrearEmpresa.resx">
+      <DependentUpon>Form_CrearEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EmpresasCreadas.resx">
+      <DependentUpon>Form_EmpresasCreadas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>

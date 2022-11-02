@@ -55,6 +55,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_editar_Per = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cb_Percepciones = new System.Windows.Forms.ComboBox();
             this.dataGV_Percepciones = new System.Windows.Forms.DataGridView();
             this.col_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ClavePer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +77,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_editar_Ded = new System.Windows.Forms.Button();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.cb_Deducciones = new System.Windows.Forms.ComboBox();
             this.dataGV_Deducciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,19 +92,6 @@
             this.txt_importeDed = new System.Windows.Forms.TextBox();
             this.txt_ClaveDed = new System.Windows.Forms.TextBox();
             this.txt_DescDed = new System.Windows.Forms.TextBox();
-            this.cb_Percepciones = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.btn_editar_Per = new System.Windows.Forms.Button();
-            this.cb_Deducciones = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.btn_editar_Ded = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Panel_DatosEmpl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -373,6 +373,67 @@
             this.panel6.Size = new System.Drawing.Size(1076, 220);
             this.panel6.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.Location = new System.Drawing.Point(1010, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btn_editar_Per
+            // 
+            this.btn_editar_Per.Location = new System.Drawing.Point(948, 47);
+            this.btn_editar_Per.Name = "btn_editar_Per";
+            this.btn_editar_Per.Size = new System.Drawing.Size(56, 23);
+            this.btn_editar_Per.TabIndex = 11;
+            this.btn_editar_Per.Text = "Editar";
+            this.btn_editar_Per.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(47, 50);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(171, 21);
+            this.comboBox2.TabIndex = 10;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(786, 50);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(120, 20);
+            this.textBox3.TabIndex = 9;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(370, 50);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(378, 20);
+            this.textBox4.TabIndex = 8;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(243, 50);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(105, 20);
+            this.textBox5.TabIndex = 7;
+            // 
+            // cb_Percepciones
+            // 
+            this.cb_Percepciones.FormattingEnabled = true;
+            this.cb_Percepciones.Items.AddRange(new object[] {
+            "Sueldos y salarios",
+            "Glatificacion Anual",
+            "Fondo de Ahorro",
+            "Caja de Ahorro"});
+            this.cb_Percepciones.Location = new System.Drawing.Point(47, 8);
+            this.cb_Percepciones.Name = "cb_Percepciones";
+            this.cb_Percepciones.Size = new System.Drawing.Size(171, 21);
+            this.cb_Percepciones.TabIndex = 6;
+            // 
             // dataGV_Percepciones
             // 
             this.dataGV_Percepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -514,6 +575,56 @@
             this.panel8.Size = new System.Drawing.Size(1076, 336);
             this.panel8.TabIndex = 8;
             // 
+            // btn_editar_Ded
+            // 
+            this.btn_editar_Ded.Location = new System.Drawing.Point(948, 42);
+            this.btn_editar_Ded.Name = "btn_editar_Ded";
+            this.btn_editar_Ded.Size = new System.Drawing.Size(56, 23);
+            this.btn_editar_Ded.TabIndex = 17;
+            this.btn_editar_Ded.Text = "Ediar";
+            this.btn_editar_Ded.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(48, 44);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(170, 21);
+            this.comboBox4.TabIndex = 16;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(786, 44);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(120, 20);
+            this.textBox6.TabIndex = 15;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(243, 44);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(105, 20);
+            this.textBox10.TabIndex = 13;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(370, 44);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(378, 20);
+            this.textBox11.TabIndex = 14;
+            // 
+            // cb_Deducciones
+            // 
+            this.cb_Deducciones.FormattingEnabled = true;
+            this.cb_Deducciones.Items.AddRange(new object[] {
+            "ISR",
+            "IMSS",
+            "Ausencia"});
+            this.cb_Deducciones.Location = new System.Drawing.Point(48, 8);
+            this.cb_Deducciones.Name = "cb_Deducciones";
+            this.cb_Deducciones.Size = new System.Drawing.Size(170, 21);
+            this.cb_Deducciones.TabIndex = 12;
+            // 
             // dataGV_Deducciones
             // 
             this.dataGV_Deducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -577,117 +688,6 @@
             this.txt_DescDed.Name = "txt_DescDed";
             this.txt_DescDed.Size = new System.Drawing.Size(378, 20);
             this.txt_DescDed.TabIndex = 8;
-            // 
-            // cb_Percepciones
-            // 
-            this.cb_Percepciones.FormattingEnabled = true;
-            this.cb_Percepciones.Items.AddRange(new object[] {
-            "Sueldos y salarios",
-            "Glatificacion Anual",
-            "Fondo de Ahorro",
-            "Caja de Ahorro"});
-            this.cb_Percepciones.Location = new System.Drawing.Point(47, 8);
-            this.cb_Percepciones.Name = "cb_Percepciones";
-            this.cb_Percepciones.Size = new System.Drawing.Size(171, 21);
-            this.cb_Percepciones.TabIndex = 6;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(47, 50);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(171, 21);
-            this.comboBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(786, 50);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(370, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(378, 20);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(243, 50);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(105, 20);
-            this.textBox5.TabIndex = 7;
-            // 
-            // btn_editar_Per
-            // 
-            this.btn_editar_Per.Location = new System.Drawing.Point(948, 47);
-            this.btn_editar_Per.Name = "btn_editar_Per";
-            this.btn_editar_Per.Size = new System.Drawing.Size(56, 23);
-            this.btn_editar_Per.TabIndex = 11;
-            this.btn_editar_Per.Text = "Editar";
-            this.btn_editar_Per.UseVisualStyleBackColor = true;
-            // 
-            // cb_Deducciones
-            // 
-            this.cb_Deducciones.FormattingEnabled = true;
-            this.cb_Deducciones.Items.AddRange(new object[] {
-            "ISR",
-            "IMSS",
-            "Ausencia"});
-            this.cb_Deducciones.Location = new System.Drawing.Point(48, 8);
-            this.cb_Deducciones.Name = "cb_Deducciones";
-            this.cb_Deducciones.Size = new System.Drawing.Size(170, 21);
-            this.cb_Deducciones.TabIndex = 12;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(48, 44);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(170, 21);
-            this.comboBox4.TabIndex = 16;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(786, 44);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 15;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(243, 44);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(105, 20);
-            this.textBox10.TabIndex = 13;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(370, 44);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(378, 20);
-            this.textBox11.TabIndex = 14;
-            // 
-            // btn_editar_Ded
-            // 
-            this.btn_editar_Ded.Location = new System.Drawing.Point(948, 42);
-            this.btn_editar_Ded.Name = "btn_editar_Ded";
-            this.btn_editar_Ded.Size = new System.Drawing.Size(56, 23);
-            this.btn_editar_Ded.TabIndex = 17;
-            this.btn_editar_Ded.Text = "Ediar";
-            this.btn_editar_Ded.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(1010, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form_Timbra
             // 

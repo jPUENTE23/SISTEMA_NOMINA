@@ -51,7 +51,7 @@
             this.Panael_LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panael_LeftMenu.Location = new System.Drawing.Point(0, 0);
             this.Panael_LeftMenu.Name = "Panael_LeftMenu";
-            this.Panael_LeftMenu.Size = new System.Drawing.Size(200, 555);
+            this.Panael_LeftMenu.Size = new System.Drawing.Size(200, 542);
             this.Panael_LeftMenu.TabIndex = 0;
             // 
             // panel2
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 555);
+            this.ClientSize = new System.Drawing.Size(1074, 542);
             this.Controls.Add(this.Panael_LeftMenu);
             this.Name = "Form_Menu";
             this.Text = "Form_Menu";
