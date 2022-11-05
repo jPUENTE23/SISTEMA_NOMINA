@@ -29,7 +29,6 @@ namespace SISTEMA_NOMINA.BD
                     MessageBox.Show("La conexion a fallado " + e.ToString());
                 }
                 return AbrirConn;
-
             }
 
             public SqlConnection CerrarConexionnBD()
@@ -125,6 +124,40 @@ namespace SISTEMA_NOMINA.BD
 
                 /* Cerramos la conexion con la base de datos */
                 Usuario_Conexion.CerrarConexionnBD();
+            }
+
+            public SqlDataReader ListarUsuarios()
+            {
+                cmd.Connection = Usuario_Conexion.AbrirConexioBD();
+
+                cmd.CommandText = "SP_LISTAR_USUARIOS";
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader Usuarios = cmd.ExecuteReader();
+
+                return Usuarios;
+            }
+        }
+
+        public class Login
+        {
+            private Conexion LoginConexion = new Conexion();
+            SqlCommand cmd = new SqlCommand();
+            
+            public SqlDataReader LoginValidar(dynamic LogUsarios, dynamic LogConstraseña)
+            {
+                cmd.Connection = LoginConexion.AbrirConexioBD();
+                cmd.CommandText = "SP_LOGIN";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Usuario", LogUsarios);
+                cmd.Parameters.AddWithValue("@Constraseña", LogConstraseña);
+                SqlDataReader valLogin = cmd.ExecuteReader();
+
+                cmd.Parameters.Clear();
+
+                return valLogin;
             }
         }
     }

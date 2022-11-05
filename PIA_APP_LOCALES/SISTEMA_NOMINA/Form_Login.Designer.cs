@@ -38,27 +38,29 @@
             this.btn_CrearEmpr = new System.Windows.Forms.Button();
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lbl_Usuario
             // 
             this.lbl_Usuario.AutoSize = true;
-            this.lbl_Usuario.Location = new System.Drawing.Point(57, 33);
+            this.lbl_Usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Usuario.Location = new System.Drawing.Point(721, 82);
             this.lbl_Usuario.Name = "lbl_Usuario";
-            this.lbl_Usuario.Size = new System.Drawing.Size(43, 13);
+            this.lbl_Usuario.Size = new System.Drawing.Size(65, 19);
             this.lbl_Usuario.TabIndex = 0;
             this.lbl_Usuario.Text = "Usuario";
             // 
             // txt_Usuario
             // 
-            this.txt_Usuario.Location = new System.Drawing.Point(60, 73);
+            this.txt_Usuario.Location = new System.Drawing.Point(725, 104);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(240, 20);
             this.txt_Usuario.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(60, 163);
+            this.textBox2.Location = new System.Drawing.Point(725, 162);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(240, 20);
             this.textBox2.TabIndex = 3;
@@ -66,9 +68,10 @@
             // txt_Contraseña
             // 
             this.txt_Contraseña.AutoSize = true;
-            this.txt_Contraseña.Location = new System.Drawing.Point(57, 123);
+            this.txt_Contraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Contraseña.Location = new System.Drawing.Point(721, 140);
             this.txt_Contraseña.Name = "txt_Contraseña";
-            this.txt_Contraseña.Size = new System.Drawing.Size(61, 13);
+            this.txt_Contraseña.Size = new System.Drawing.Size(98, 19);
             this.txt_Contraseña.TabIndex = 2;
             this.txt_Contraseña.Text = "Contraseña";
             // 
@@ -78,7 +81,7 @@
             this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Ingresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Ingresar.Location = new System.Drawing.Point(60, 216);
+            this.btn_Ingresar.Location = new System.Drawing.Point(725, 215);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(240, 36);
             this.btn_Ingresar.TabIndex = 4;
@@ -88,7 +91,7 @@
             // 
             // btn_conexion
             // 
-            this.btn_conexion.Location = new System.Drawing.Point(60, 412);
+            this.btn_conexion.Location = new System.Drawing.Point(725, 390);
             this.btn_conexion.Name = "btn_conexion";
             this.btn_conexion.Size = new System.Drawing.Size(240, 36);
             this.btn_conexion.TabIndex = 5;
@@ -102,7 +105,7 @@
             this.btn_CrearEmpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearEmpr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearEmpr.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearEmpr.Location = new System.Drawing.Point(60, 300);
+            this.btn_CrearEmpr.Location = new System.Drawing.Point(725, 299);
             this.btn_CrearEmpr.Name = "btn_CrearEmpr";
             this.btn_CrearEmpr.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearEmpr.TabIndex = 6;
@@ -116,7 +119,7 @@
             this.btn_CrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearUsuario.Location = new System.Drawing.Point(60, 258);
+            this.btn_CrearUsuario.Location = new System.Drawing.Point(725, 257);
             this.btn_CrearUsuario.Name = "btn_CrearUsuario";
             this.btn_CrearUsuario.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearUsuario.TabIndex = 7;
@@ -130,11 +133,15 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 540);
+            this.ClientSize = new System.Drawing.Size(1026, 556);
             this.Controls.Add(this.btn_CrearUsuario);
             this.Controls.Add(this.btn_CrearEmpr);
             this.Controls.Add(this.btn_conexion);
@@ -161,6 +168,7 @@
         private System.Windows.Forms.Button btn_CrearEmpr;
         private System.Windows.Forms.Button btn_CrearUsuario;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

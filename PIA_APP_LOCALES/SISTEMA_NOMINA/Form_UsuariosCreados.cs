@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SISTEMA_NOMINA
 {
@@ -15,6 +16,17 @@ namespace SISTEMA_NOMINA
         public Form_UsuariosCreados()
         {
             InitializeComponent();
+
+            BD.ConexionSQL.Usuarios UsuarioConn = new BD.ConexionSQL.Usuarios();
+            BD.ConexionSQL.Conexion CloseUsuario = new BD.ConexionSQL.Conexion();
+            SqlDataReader ListaEmpresas = UsuarioConn.ListarUsuarios();
+
+            while (ListaEmpresas.Read())
+            {
+                lb_UsuariosCreados.Items.Add(ListaEmpresas["Nom_Usuario"].ToString());
+            }
+
+            CloseUsuario.CerrarConexionnBD();
         }
 
         private void btn_CrearUsuario_Click(object sender, EventArgs e)

@@ -20,9 +20,30 @@ namespace SISTEMA_NOMINA
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
-            FormSeleccionarEmpr.Show();
+
+            BD.ConexionSQL.Login ConnLogin = new BD.ConexionSQL.Login();
+            BD.ConexionSQL.Conexion CloseLogin = new BD.ConexionSQL.Conexion();
+
+            dynamic Usuario = txt_Usuario.Text;
+            dynamic Contraseña = txt_Contraseña.Text;
+
+            SqlDataReader ResultadoLogin = ConnLogin.LoginValidar(Usuario, Contraseña);
+
+            if (ResultadoLogin.Read())
+            {
+
+                this.Hide();
+                Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
+                FormSeleccionarEmpr.Show();
+
+                txt_Usuario.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("Las creedenciales ingresadss no se encontraron. \nFavor de verificar que los datos ingreesados sean validos. ");
+            }
+            CloseLogin.CerrarConexionnBD();
 
         }
 
