@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -35,6 +36,8 @@
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.btn_conexion = new System.Windows.Forms.Button();
             this.btn_CrearEmpr = new System.Windows.Forms.Button();
+            this.btn_CrearUsuario = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // lbl_Usuario
@@ -71,12 +74,16 @@
             // 
             // btn_Ingresar
             // 
+            this.btn_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(67)))));
+            this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ingresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Ingresar.Location = new System.Drawing.Point(60, 216);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(240, 36);
             this.btn_Ingresar.TabIndex = 4;
             this.btn_Ingresar.Text = "Ingresar";
-            this.btn_Ingresar.UseVisualStyleBackColor = true;
+            this.btn_Ingresar.UseVisualStyleBackColor = false;
             this.btn_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
             // 
             // btn_conexion
@@ -91,19 +98,44 @@
             // 
             // btn_CrearEmpr
             // 
-            this.btn_CrearEmpr.Location = new System.Drawing.Point(60, 258);
+            this.btn_CrearEmpr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(67)))));
+            this.btn_CrearEmpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CrearEmpr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CrearEmpr.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_CrearEmpr.Location = new System.Drawing.Point(60, 300);
             this.btn_CrearEmpr.Name = "btn_CrearEmpr";
             this.btn_CrearEmpr.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearEmpr.TabIndex = 6;
             this.btn_CrearEmpr.Text = "Craear una nueva empresa";
-            this.btn_CrearEmpr.UseVisualStyleBackColor = true;
+            this.btn_CrearEmpr.UseVisualStyleBackColor = false;
             this.btn_CrearEmpr.Click += new System.EventHandler(this.btn_CrearEmpr_Click);
+            // 
+            // btn_CrearUsuario
+            // 
+            this.btn_CrearUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(67)))));
+            this.btn_CrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CrearUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CrearUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_CrearUsuario.Location = new System.Drawing.Point(60, 258);
+            this.btn_CrearUsuario.Name = "btn_CrearUsuario";
+            this.btn_CrearUsuario.Size = new System.Drawing.Size(240, 36);
+            this.btn_CrearUsuario.TabIndex = 7;
+            this.btn_CrearUsuario.Text = "Crear un nuevo usuario";
+            this.btn_CrearUsuario.UseVisualStyleBackColor = false;
+            this.btn_CrearUsuario.Click += new System.EventHandler(this.btn_CrearUsuario_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 540);
+            this.Controls.Add(this.btn_CrearUsuario);
             this.Controls.Add(this.btn_CrearEmpr);
             this.Controls.Add(this.btn_conexion);
             this.Controls.Add(this.btn_Ingresar);
@@ -127,6 +159,8 @@
         private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Button btn_conexion;
         private System.Windows.Forms.Button btn_CrearEmpr;
+        private System.Windows.Forms.Button btn_CrearUsuario;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

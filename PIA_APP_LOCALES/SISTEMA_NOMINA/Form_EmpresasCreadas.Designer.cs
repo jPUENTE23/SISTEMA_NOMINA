@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.lbl_EmpresasCreadas = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lb_EmprCreadas = new System.Windows.Forms.ListBox();
             this.btn_NuevaEmpresa = new System.Windows.Forms.Button();
+            this.link_regresar = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lbl_EmpresasCreadas
@@ -43,13 +44,13 @@
             this.lbl_EmpresasCreadas.TabIndex = 0;
             this.lbl_EmpresasCreadas.Text = "Empresas Creadas";
             // 
-            // listBox1
+            // lb_EmprCreadas
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(71, 173);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(314, 160);
-            this.listBox1.TabIndex = 1;
+            this.lb_EmprCreadas.FormattingEnabled = true;
+            this.lb_EmprCreadas.Location = new System.Drawing.Point(71, 173);
+            this.lb_EmprCreadas.Name = "lb_EmprCreadas";
+            this.lb_EmprCreadas.Size = new System.Drawing.Size(314, 160);
+            this.lb_EmprCreadas.TabIndex = 1;
             // 
             // btn_NuevaEmpresa
             // 
@@ -62,13 +63,26 @@
             this.btn_NuevaEmpresa.UseVisualStyleBackColor = true;
             this.btn_NuevaEmpresa.Click += new System.EventHandler(this.btn_NuevaEmpresa_Click);
             // 
+            // link_regresar
+            // 
+            this.link_regresar.AutoSize = true;
+            this.link_regresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_regresar.Location = new System.Drawing.Point(67, 75);
+            this.link_regresar.Name = "link_regresar";
+            this.link_regresar.Size = new System.Drawing.Size(78, 21);
+            this.link_regresar.TabIndex = 3;
+            this.link_regresar.TabStop = true;
+            this.link_regresar.Text = "Regresar";
+            this.link_regresar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_regresar_LinkClicked);
+            // 
             // Form_EmpresasCreadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 591);
+            this.Controls.Add(this.link_regresar);
             this.Controls.Add(this.btn_NuevaEmpresa);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lb_EmprCreadas);
             this.Controls.Add(this.lbl_EmpresasCreadas);
             this.Name = "Form_EmpresasCreadas";
             this.Text = "Form_EmpresasCreadas";
@@ -80,7 +94,8 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_EmpresasCreadas;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lb_EmprCreadas;
         private System.Windows.Forms.Button btn_NuevaEmpresa;
+        private System.Windows.Forms.LinkLabel link_regresar;
     }
 }

@@ -83,6 +83,49 @@ namespace SISTEMA_NOMINA.BD
                 Empr_Conexion.CerrarConexionnBD();
 
             }
+
+            public SqlDataReader ListarEmpresas()
+            {
+                cmd.Connection = Empr_Conexion.AbrirConexioBD();
+                cmd.CommandText = "SP_LISTAR_EMPRESAS";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                /* Creamos una variable de tipo SqlDataReader para la lectura de los
+                 datos que nos devuelva la consulta */
+                SqlDataReader ListadoEmpr = cmd.ExecuteReader();
+
+
+                /* Retornamos los daos que se hayan encontrado */
+                return ListadoEmpr;
+
+            }
+        }
+
+        public class Usuarios
+        {
+            private Conexion Usuario_Conexion = new Conexion();
+            SqlCommand cmd = new SqlCommand();
+
+            public void Crear_Usuario(dynamic NomUsuario, dynamic passUsuario)
+            {
+                /*  - Abrimos la conexion a la base de datos.
+                    - Indicamos el nombre del procedimiento almcenado a ajecutar.
+                    - Indicamos el tipo de comando a ejecutar. */
+
+                cmd.Connection = Usuario_Conexion.AbrirConexioBD();
+                cmd.CommandText = "SP_CREAR_USUARIO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                /* Pasamo los parametros y valores al procedimient almacenado */
+                cmd.Parameters.AddWithValue("@NombreUsuario", NomUsuario);
+                cmd.Parameters.AddWithValue("@ConstraseñaUsuario", passUsuario);
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.Clear();
+
+                /* Cerramos la conexion con la base de datos */
+                Usuario_Conexion.CerrarConexionnBD();
+            }
         }
     }
 }

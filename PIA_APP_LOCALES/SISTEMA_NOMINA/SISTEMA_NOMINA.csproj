@@ -54,6 +54,12 @@
     <Compile Include="Form_CrearEmpresa.Designer.cs">
       <DependentUpon>Form_CrearEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_CrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CrearUsuario.Designer.cs">
+      <DependentUpon>Form_CrearUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_EmpresasCreadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,10 +90,19 @@
     <Compile Include="Form_Timbra.Designer.cs">
       <DependentUpon>Form_Timbra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_UsuariosCreados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_UsuariosCreados.Designer.cs">
+      <DependentUpon>Form_UsuariosCreados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_CrearEmpresa.resx">
       <DependentUpon>Form_CrearEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CrearUsuario.resx">
+      <DependentUpon>Form_CrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_EmpresasCreadas.resx">
       <DependentUpon>Form_EmpresasCreadas.cs</DependentUpon>
@@ -103,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Timbra.resx">
       <DependentUpon>Form_Timbra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_UsuariosCreados.resx">
+      <DependentUpon>Form_UsuariosCreados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

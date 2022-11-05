@@ -39,5 +39,12 @@ namespace SISTEMA_NOMINA
             Form_EmpresasCreadas FormEmpresasCraedas = new Form_EmpresasCreadas();
             FormEmpresasCraedas.Show();
         }
+
+        private void btn_CrearUsuario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_UsuariosCreados FormUsuarioCreados = new Form_UsuariosCreados();
+            FormUsuarioCreados.Show();
+        }
     }
 }
