@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="BD\ConexionSQL.cs" />
     <Compile Include="CLASES\Percepciones.cs" />
+    <Compile Include="Form_AdministrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AdministrarUsuario.Designer.cs">
+      <DependentUpon>Form_AdministrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_CrearEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_AdministrarUsuario.resx">
+      <DependentUpon>Form_AdministrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_CrearEmpresa.resx">
       <DependentUpon>Form_CrearEmpresa.cs</DependentUpon>
     </EmbeddedResource>

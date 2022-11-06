@@ -47,12 +47,6 @@ namespace SISTEMA_NOMINA
 
         }
 
-        private void btn_conexion_Click(object sender, EventArgs e)
-        {
-            BD.ConexionSQL.Conexion myConn = new BD.ConexionSQL.Conexion();
-            myConn.AbrirConexioBD();
-            
-        }
 
         private void btn_CrearEmpr_Click(object sender, EventArgs e)
         {
@@ -66,6 +60,11 @@ namespace SISTEMA_NOMINA
             this.Hide();
             Form_UsuariosCreados FormUsuarioCreados = new Form_UsuariosCreados();
             FormUsuarioCreados.Show();
+        }
+
+        private void btn_salirApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -83,8 +83,9 @@
             this.btn_AdminUsuario.Name = "btn_AdminUsuario";
             this.btn_AdminUsuario.Size = new System.Drawing.Size(274, 35);
             this.btn_AdminUsuario.TabIndex = 7;
-            this.btn_AdminUsuario.Text = "Adminnistrar Usuario";
+            this.btn_AdminUsuario.Text = "Administrar Usuario";
             this.btn_AdminUsuario.UseVisualStyleBackColor = true;
+            this.btn_AdminUsuario.Click += new System.EventHandler(this.btn_AdminUsuario_Click);
             // 
             // Form_UsuariosCreados
             // 

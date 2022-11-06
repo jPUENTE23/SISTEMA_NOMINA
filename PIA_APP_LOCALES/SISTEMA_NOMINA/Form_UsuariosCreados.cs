@@ -42,5 +42,13 @@ namespace SISTEMA_NOMINA
             Form_Login FormLogin = new Form_Login();
             FormLogin.Show();
         }
+
+        private void btn_AdminUsuario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_AdministrarUsuario FormAdminUsuario = new Form_AdministrarUsuario();
+            FormAdminUsuario.Show();
+
+        }
     }
 }
