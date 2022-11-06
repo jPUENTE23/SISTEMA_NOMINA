@@ -44,6 +44,8 @@ namespace SISTEMA_NOMINA.BD
                 }
                 return CerrarConn;
             }
+
+           
         }
 
         public class Empresa
@@ -98,6 +100,23 @@ namespace SISTEMA_NOMINA.BD
                 return ListadoEmpr;
 
             }
+
+            public SqlDataReader ID_Empresa(dynamic Nom_Empresa)
+            {
+                cmd.Connection = Empr_Conexion.AbrirConexioBD();
+
+                cmd.CommandText = "SP_OBTENER_ID_EMPRESA";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@NombreEmpresa", Nom_Empresa);
+
+                SqlDataReader id_empresa = cmd.ExecuteReader();
+
+                cmd.Parameters.Clear();
+
+                return id_empresa;
+
+            }
         }
 
         public class Usuarios
@@ -138,6 +157,22 @@ namespace SISTEMA_NOMINA.BD
 
                 return Usuarios;
             }
+
+            public SqlDataReader ID_USUARIO(dynamic Nombre_Usuario)
+            {
+                cmd.Connection = Usuario_Conexion.AbrirConexioBD();
+
+                cmd.CommandText = "SP_OBTENER_ID_USUARIO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@NombreUsuario",Nombre_Usuario);
+                SqlDataReader id_usuario = cmd.ExecuteReader();
+
+                cmd.Parameters.Clear();
+
+                return id_usuario;
+
+            }
         }
 
         public class Login
@@ -147,10 +182,14 @@ namespace SISTEMA_NOMINA.BD
             
             public SqlDataReader LoginValidar(dynamic LogUsarios, dynamic LogConstraseña)
             {
+                /* Abrimos la conexion a la base de datos */
                 cmd.Connection = LoginConexion.AbrirConexioBD();
+
+                /* Indicasmos el nombre del procediiento almcacenado y el tipo de coandoa a ejecutar */
                 cmd.CommandText = "SP_LOGIN";
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                /* Pasamos los parametros al procedmiento almacenado */
                 cmd.Parameters.AddWithValue("@Usuario", LogUsarios);
                 cmd.Parameters.AddWithValue("@Constraseña", LogConstraseña);
                 SqlDataReader valLogin = cmd.ExecuteReader();

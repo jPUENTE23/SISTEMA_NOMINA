@@ -35,7 +35,8 @@
             this.lb_EmprAsignadas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.link_Regresar = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btn_AgrEmpresa = new System.Windows.Forms.Button();
+            this.cb_Usuarios = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_Usuario
@@ -81,7 +82,7 @@
             // lb_EmprAsignadas
             // 
             this.lb_EmprAsignadas.FormattingEnabled = true;
-            this.lb_EmprAsignadas.Location = new System.Drawing.Point(51, 275);
+            this.lb_EmprAsignadas.Location = new System.Drawing.Point(51, 327);
             this.lb_EmprAsignadas.Name = "lb_EmprAsignadas";
             this.lb_EmprAsignadas.Size = new System.Drawing.Size(378, 277);
             this.lb_EmprAsignadas.TabIndex = 7;
@@ -91,7 +92,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(47, 238);
+            this.label1.Location = new System.Drawing.Point(47, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 19);
             this.label1.TabIndex = 8;
@@ -109,22 +110,32 @@
             this.link_Regresar.Text = "< Regresar";
             this.link_Regresar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Regresar_LinkClicked);
             // 
-            // label2
+            // btn_AgrEmpresa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "(Nombre del Usuario)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AgrEmpresa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AgrEmpresa.Location = new System.Drawing.Point(51, 227);
+            this.btn_AgrEmpresa.Name = "btn_AgrEmpresa";
+            this.btn_AgrEmpresa.Size = new System.Drawing.Size(378, 33);
+            this.btn_AgrEmpresa.TabIndex = 11;
+            this.btn_AgrEmpresa.Text = "Agregar Empresa";
+            this.btn_AgrEmpresa.UseVisualStyleBackColor = true;
+            this.btn_AgrEmpresa.Click += new System.EventHandler(this.btn_AgrEmpresa_Click);
+            // 
+            // cb_Usuarios
+            // 
+            this.cb_Usuarios.FormattingEnabled = true;
+            this.cb_Usuarios.Location = new System.Drawing.Point(249, 98);
+            this.cb_Usuarios.Name = "cb_Usuarios";
+            this.cb_Usuarios.Size = new System.Drawing.Size(180, 21);
+            this.cb_Usuarios.TabIndex = 12;
             // 
             // Form_AdministrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 618);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(493, 630);
+            this.Controls.Add(this.cb_Usuarios);
+            this.Controls.Add(this.btn_AgrEmpresa);
             this.Controls.Add(this.link_Regresar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_EmprAsignadas);
@@ -132,6 +143,7 @@
             this.Controls.Add(this.lbl_NomEmpresa);
             this.Controls.Add(this.lbl_AgrEmpresa);
             this.Controls.Add(this.lbl_Usuario);
+            this.MinimizeBox = false;
             this.Name = "Form_AdministrarUsuario";
             this.Text = "Form_AdministrarUsuario";
             this.ResumeLayout(false);
@@ -148,6 +160,7 @@
         private System.Windows.Forms.ListBox lb_EmprAsignadas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel link_Regresar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_AgrEmpresa;
+        private System.Windows.Forms.ComboBox cb_Usuarios;
     }
 }

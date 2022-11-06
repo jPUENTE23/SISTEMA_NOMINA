@@ -191,6 +191,8 @@
             this.Controls.Add(this.txt_Contraseña);
             this.Controls.Add(this.txt_Usuario);
             this.Controls.Add(this.lbl_Usuario);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_Login";
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);

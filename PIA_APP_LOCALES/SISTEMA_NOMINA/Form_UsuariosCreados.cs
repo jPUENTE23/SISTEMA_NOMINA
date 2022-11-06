@@ -48,7 +48,16 @@ namespace SISTEMA_NOMINA
             this.Hide();
             Form_AdministrarUsuario FormAdminUsuario = new Form_AdministrarUsuario();
             FormAdminUsuario.Show();
-
         }
+
+        //public dynamic UsuarioSlecionado()
+        //{
+        //    if (lb_UsuariosCreados.SelectedIndex != -1)
+        //    {
+        //        dynamic UsuarioSelect = (string)lb_UsuariosCreados.Items[lb_UsuariosCreados.SelectedIndex];
+        //        return UsuarioSelect;
+        //    }
+            
+        //}
     }
 }
