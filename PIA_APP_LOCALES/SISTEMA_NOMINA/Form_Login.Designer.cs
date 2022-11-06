@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txt_Contraseña = new System.Windows.Forms.Label();
+            this.txt_Contraseña = new System.Windows.Forms.TextBox();
+            this.lbl_Contraseña = new System.Windows.Forms.Label();
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.btn_CrearEmpr = new System.Windows.Forms.Button();
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
@@ -64,22 +64,22 @@
             this.txt_Usuario.Size = new System.Drawing.Size(240, 20);
             this.txt_Usuario.TabIndex = 1;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(735, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 20);
-            this.textBox2.TabIndex = 3;
-            // 
             // txt_Contraseña
             // 
-            this.txt_Contraseña.AutoSize = true;
-            this.txt_Contraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Contraseña.Location = new System.Drawing.Point(731, 125);
+            this.txt_Contraseña.Location = new System.Drawing.Point(735, 147);
             this.txt_Contraseña.Name = "txt_Contraseña";
-            this.txt_Contraseña.Size = new System.Drawing.Size(98, 19);
-            this.txt_Contraseña.TabIndex = 2;
-            this.txt_Contraseña.Text = "Contraseña";
+            this.txt_Contraseña.Size = new System.Drawing.Size(240, 20);
+            this.txt_Contraseña.TabIndex = 3;
+            // 
+            // lbl_Contraseña
+            // 
+            this.lbl_Contraseña.AutoSize = true;
+            this.lbl_Contraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Contraseña.Location = new System.Drawing.Point(731, 125);
+            this.lbl_Contraseña.Name = "lbl_Contraseña";
+            this.lbl_Contraseña.Size = new System.Drawing.Size(98, 19);
+            this.lbl_Contraseña.TabIndex = 2;
+            this.lbl_Contraseña.Text = "Contraseña";
             // 
             // btn_Ingresar
             // 
@@ -187,8 +187,8 @@
             this.Controls.Add(this.btn_CrearUsuario);
             this.Controls.Add(this.btn_CrearEmpr);
             this.Controls.Add(this.btn_Ingresar);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.txt_Contraseña);
+            this.Controls.Add(this.lbl_Contraseña);
             this.Controls.Add(this.txt_Usuario);
             this.Controls.Add(this.lbl_Usuario);
             this.MaximizeBox = false;
@@ -206,8 +206,8 @@
 
         private System.Windows.Forms.Label lbl_Usuario;
         private System.Windows.Forms.TextBox txt_Usuario;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label txt_Contraseña;
+        private System.Windows.Forms.TextBox txt_Contraseña;
+        private System.Windows.Forms.Label lbl_Contraseña;
         private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Button btn_CrearEmpr;
         private System.Windows.Forms.Button btn_CrearUsuario;
