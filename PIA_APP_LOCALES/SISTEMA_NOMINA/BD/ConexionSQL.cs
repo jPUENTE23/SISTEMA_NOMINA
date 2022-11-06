@@ -147,12 +147,15 @@ namespace SISTEMA_NOMINA.BD
 
             public SqlDataReader ListarUsuarios()
             {
+                /* Abrimos la conexion hacia la basse de datos */
                 cmd.Connection = Usuario_Conexion.AbrirConexioBD();
 
+                /* Idicamos el nombre del procedimiento almcaendao y el tipo 
+                 de comando a ajecutar */
                 cmd.CommandText = "SP_LISTAR_USUARIOS";
-
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                /* Almacenamos los resultados obtenidos */
                 SqlDataReader Usuarios = cmd.ExecuteReader();
 
                 return Usuarios;
@@ -180,6 +183,8 @@ namespace SISTEMA_NOMINA.BD
             private Conexion LoginConexion = new Conexion();
             SqlCommand cmd = new SqlCommand();
             
+
+            // METODO PARA VALIDAR EL INGREDO DE USUARIOS
             public SqlDataReader LoginValidar(dynamic LogUsarios, dynamic LogConstraseña)
             {
                 /* Abrimos la conexion a la base de datos */
@@ -198,6 +203,28 @@ namespace SISTEMA_NOMINA.BD
 
                 return valLogin;
             }
+        }
+
+        public class Detalle_Usuario
+        {
+            private Conexion DU_Conn = new Conexion();
+            SqlCommand cmd = new SqlCommand();
+
+            public void Insertar_DU(int DU_IdUsuario, int DU_IdEmpresa)
+            {
+                cmd.Connection = DU_Conn.AbrirConexioBD();
+
+                cmd.CommandText = "SP_CREAR_DETALLE_USUARIO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IdUsuario", DU_IdUsuario);
+                cmd.Parameters.AddWithValue("@IdEmpresa", DU_IdEmpresa);
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.Clear();
+                DU_Conn.CerrarConexionnBD();
+            }
+
         }
     }
 }

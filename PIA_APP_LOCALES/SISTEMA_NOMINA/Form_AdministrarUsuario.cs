@@ -40,12 +40,6 @@ namespace SISTEMA_NOMINA
 
             CloseConn.CerrarConexionnBD();
 
-
-
-            //Form_UsuariosCreados UsuarioSelect = new Form_UsuariosCreados();
-            //dynamic UserSelect = UsuarioSelect.UsuarioSlecionado();
-
-            //lbl_UsuarioSeleccionado.Text = UserSelect;
         }
 
         private void link_Regresar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -57,19 +51,44 @@ namespace SISTEMA_NOMINA
 
         private void btn_AgrEmpresa_Click(object sender, EventArgs e)
         {
+
+            /* Creamos las instacias necesarias para acceder a las clases fuera del archivo */
             BD.ConexionSQL.Empresa ConnEmpresas = new BD.ConexionSQL.Empresa();
             BD.ConexionSQL.Usuarios ConnUsuarios = new BD.ConexionSQL.Usuarios();
+            BD.ConexionSQL.Detalle_Usuario ConnDU = new BD.ConexionSQL.Detalle_Usuario();
 
+            BD.ConexionSQL.Conexion ClsoeConn = new BD.ConexionSQL.Conexion();
+
+            /* Obetenr el indice el usuario y empresa selecccionado en el combo box*/
             int indexUsuario = cb_Usuarios.SelectedIndex;
             int indexEmpresa = cb_Empresas.SelectedIndex;
 
+            /* Utilizadon el indece campurado anteriormente, lo utilizamos para obtener el
+             nombre del usuatrio y de la empresa, posteriomente guardarlos en una variable */
             string nomUsuario = cb_Usuarios.Items[indexUsuario].ToString();
             string nomEmpresa = cb_Empresas.Items[indexEmpresa].ToString();
 
+            /* Mandoamos a llamer el los metodos para obetener el id de ambos desde la base de datos */
             SqlDataReader getIdUsuario = ConnUsuarios.ID_USUARIO(nomUsuario);
             SqlDataReader getIdEmpresa = ConnEmpresas.ID_Empresa(nomEmpresa);
 
-            MessageBox.Show("Usuario: " + getIdUsuario["ID_Usuario"].ToString() + "Empresa: " + getIdEmpresa["ID_Empresa"].ToString());
+
+            /* Verificamos si getIdUsuario y getIdEmpresa contienen registrosa */
+            if (getIdUsuario.Read() & getIdEmpresa.Read())
+            {
+                /* Si tiene registros, almacenamos los id obtenidos a una nueva variable */
+                int DU_Usuario = Convert.ToInt16(getIdUsuario["ID_Usuario"]);
+                int DU_Empresa = Convert.ToInt16(getIdEmpresa["ID_Empresa"]);
+
+
+                /* Llamamos el metodo Insertar_DU para incertar los datos */
+                ConnDU.Insertar_DU(DU_Usuario, DU_Empresa);
+
+                MessageBox.Show("La emrpesa se agrego correctamente");
+
+            }
+
+            ClsoeConn.CerrarConexionnBD();
         }
     }
 }
