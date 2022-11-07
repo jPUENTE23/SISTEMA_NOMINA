@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BD\ConexionSQL.cs" />
     <Compile Include="CLASES\Percepciones.cs" />
+    <Compile Include="CLASES\UsuarioLogin.cs" />
     <Compile Include="Form_AdministrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

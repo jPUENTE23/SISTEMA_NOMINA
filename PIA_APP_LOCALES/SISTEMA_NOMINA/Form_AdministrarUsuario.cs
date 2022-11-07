@@ -38,6 +38,23 @@ namespace SISTEMA_NOMINA
             }
 
 
+            //MOSTRARA LAS EMPRESAS ASIGNADAS DE ACUERDO AL USUARIO SELECCIONADO
+            //-----------------------------------------------------------------------------------------
+            //int indexDuUsuario = cb_Usuarios.SelectedIndex;
+            //string nomDuUsuario = cb_Usuarios.Items[indexDuUsuario].ToString();
+            //SqlDataReader DU_Id_Usuario = ConnUsuarios.ID_USUARIO(nomDuUsuario);
+
+            //int DU_IdUsuario = Convert.ToInt16(DU_Id_Usuario["ID_Usuario"]);
+
+            //BD.ConexionSQL.Detalle_Usuario Class_DetalleUsuari = new BD.ConexionSQL.Detalle_Usuario();
+            //SqlDataReader EmpresaUsuarios = Class_DetalleUsuari.Empresas_Usuarios(DU_IdUsuario);
+
+            //while (EmpresaUsuarios.Read())
+            //{
+            //    cb_Empresas.Items.Add(EmpresaUsuarios["Nom_Empresa"].ToString());
+            //}
+
+
             CloseConn.CerrarConexionnBD();
 
         }
@@ -89,6 +106,30 @@ namespace SISTEMA_NOMINA
             }
 
             ClsoeConn.CerrarConexionnBD();
+        }
+
+        private void btn_ConsultarUsuario_Click(object sender, EventArgs e)
+        {
+            //MOSTRARA LAS EMPRESAS ASIGNADAS DE ACUERDO AL USUARIO SELECCIONADO
+            //-----------------------------------------------------------------------------------------
+            BD.ConexionSQL.Usuarios ConnUsuarios = new BD.ConexionSQL.Usuarios();
+            int indexDuUsuario = cb_Usuarios.SelectedIndex;
+            string nomDuUsuario = cb_Usuarios.Items[indexDuUsuario].ToString();
+            SqlDataReader DU_Id_Usuario = ConnUsuarios.ID_USUARIO(nomDuUsuario);
+
+            if (DU_Id_Usuario.Read())
+            {
+                int DU_IdUsuario = Convert.ToInt16(DU_Id_Usuario["ID_Usuario"]);
+
+                BD.ConexionSQL.Detalle_Usuario Class_DetalleUsuari = new BD.ConexionSQL.Detalle_Usuario();
+                SqlDataReader EmpresaUsuarios = Class_DetalleUsuari.Empresas_Usuarios(DU_IdUsuario);
+
+                while (EmpresaUsuarios.Read())
+                {
+                    lb_EmprAsignadas.Items.Add(EmpresaUsuarios["Nom_Empresa"].ToString());
+                }
+                lb_EmprAsignadas.ClearSelected();
+            }
         }
     }
 }

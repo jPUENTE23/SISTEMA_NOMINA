@@ -225,6 +225,18 @@ namespace SISTEMA_NOMINA.BD
                 DU_Conn.CerrarConexionnBD();
             }
 
+            public SqlDataReader Empresas_Usuarios(int DU_IdUsuario)
+            {
+                cmd.Connection = DU_Conn.AbrirConexioBD();
+                cmd.CommandText = "SP_LISTAR_DETALLE_USUARIO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id_Usuario", DU_IdUsuario);
+                SqlDataReader List_DU_IdUsuario = cmd.ExecuteReader();
+
+                return List_DU_IdUsuario;
+            }
+
         }
     }
 }

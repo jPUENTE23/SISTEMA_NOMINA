@@ -7,14 +7,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SISTEMA_NOMINA
 {
     public partial class Form_SeleccionarEmpr : Form
     {
-        public Form_SeleccionarEmpr()
+
+        /* Creamos una variable nivel de clase para posteriomente usarla en el constructor */
+        private dynamic _Usuario;
+
+        /*  Agregamos una parametro en el contructor que recibira cada vez que se mande 
+            a llamer el formulario.
+            
+            El obejtivo de esto es que cuando se ingrese con cualquier usuario, este almacene 
+            el nombre del usuario, para luego buscar que que empresas se le tiene asignado a ese 
+            usuario y nos las muestre en el listado del combo box */
+        public Form_SeleccionarEmpr(dynamic NomUsuario)
         {
             InitializeComponent();
+
+            /* Guardamos el parametro recibo en la variable que se creo a nivel de clase */
+            this._Usuario = NomUsuario;
+
+            /* Guardamos el valor de this._Usuario en una nueva variable */
+            dynamic UserSelect = this._Usuario;
+
+
+            /* Creamos las instancias para accede a las clases que utlizaremos */
+            BD.ConexionSQL.Detalle_Usuario DU_Conn = new BD.ConexionSQL.Detalle_Usuario();
+            BD.ConexionSQL.Usuarios Usuario_Conn = new BD.ConexionSQL.Usuarios();
+
+            /* Obtenemos el id del usuario con el que se ingreso */
+            SqlDataReader Id_Usuario = Usuario_Conn.ID_USUARIO(UserSelect);
+
+
+            /* Verificamos si se encontraron registros */
+            if (Id_Usuario.Read())
+            {
+                /*  Si se encontraron, procedemos a buscar las empreesa a las que el usuarip
+                    tiene asignadas */
+                int userId = Convert.ToInt16(Id_Usuario["ID_Usuario"]);
+                SqlDataReader List_DU = DU_Conn.Empresas_Usuarios(userId);
+
+
+                while (List_DU.Read())
+                {
+                    /* Vaciamos todas las empreces que el usuario tiene asignado dentro 
+                     de nuestro listbox*/
+                    cb_EmpresasUsuarios.Items.Add(List_DU["Nom_Empresa"]);
+                }
+            }
         }
 
         private void link_CambiarUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -24,6 +24,7 @@ namespace SISTEMA_NOMINA
             /* Creamos las instancias para llamar las clases Login y Conexion */
             BD.ConexionSQL.Login ConnLogin = new BD.ConexionSQL.Login();
             BD.ConexionSQL.Conexion CloseLogin = new BD.ConexionSQL.Conexion();
+            CLASES.UsuarioLogin NomUsuario = new CLASES.UsuarioLogin();
 
             /* Almacenamos los datos ingresados por el usuario en variables */
             dynamic Usuario = txt_Usuario.Text;
@@ -40,7 +41,8 @@ namespace SISTEMA_NOMINA
                 /* Si contiene datos, significa que el usuario y contrseña ingresados son valida
                  y podemos proceder a pasar a la siguiente pantalla */
                 this.Hide();
-                Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
+                Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr(Usuario);
+                FormSeleccionarEmpr.lbl_usuarioSleccionado.Text = txt_Usuario.Text.ToString();
                 FormSeleccionarEmpr.Show();
 
                 txt_Usuario.Clear();
@@ -57,6 +59,8 @@ namespace SISTEMA_NOMINA
             CloseLogin.CerrarConexionnBD();
 
         }
+
+        
 
 
         private void btn_CrearEmpr_Click(object sender, EventArgs e)

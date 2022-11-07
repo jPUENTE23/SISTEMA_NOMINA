@@ -26,9 +26,9 @@ namespace SISTEMA_NOMINA
 
         private void btn_SalirDeEmpresa_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
-            FormSeleccionarEmpr.Show();
+            //this.Hide();
+            //Form_SeleccionarEmpr FormSeleccionarEmpr = new Form_SeleccionarEmpr();
+            //FormSeleccionarEmpr.Show();
         }
     }
 }

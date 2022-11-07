@@ -101,7 +101,7 @@
             this.btn_CrearEmpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearEmpr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearEmpr.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearEmpr.Location = new System.Drawing.Point(735, 284);
+            this.btn_CrearEmpr.Location = new System.Drawing.Point(735, 331);
             this.btn_CrearEmpr.Name = "btn_CrearEmpr";
             this.btn_CrearEmpr.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearEmpr.TabIndex = 6;
@@ -115,7 +115,7 @@
             this.btn_CrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearUsuario.Location = new System.Drawing.Point(735, 242);
+            this.btn_CrearUsuario.Location = new System.Drawing.Point(735, 289);
             this.btn_CrearUsuario.Name = "btn_CrearUsuario";
             this.btn_CrearUsuario.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearUsuario.TabIndex = 7;
