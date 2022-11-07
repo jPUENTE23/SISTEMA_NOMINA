@@ -13,9 +13,11 @@ namespace SISTEMA_NOMINA
 {
     public partial class Form_Timbra : Form
     {
-        public Form_Timbra()
+        dynamic Usuario_;
+        public Form_Timbra(dynamic usuario)
         {
             InitializeComponent();
+            this.Usuario_ = usuario;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -26,7 +28,7 @@ namespace SISTEMA_NOMINA
         private void btn_Regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Menu FormMenu = new Form_Menu();
+            Form_Menu FormMenu = new Form_Menu(this.Usuario_);
             FormMenu.Show();
         }
 

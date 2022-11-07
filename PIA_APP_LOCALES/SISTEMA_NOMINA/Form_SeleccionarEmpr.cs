@@ -60,6 +60,7 @@ namespace SISTEMA_NOMINA
             }
         }
 
+
         private void link_CambiarUsuario_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
@@ -69,8 +70,14 @@ namespace SISTEMA_NOMINA
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
+
+            int indexEmpresa = cb_EmpresasUsuarios.SelectedIndex;
+            dynamic EmpresaSelect = cb_EmpresasUsuarios.Items[indexEmpresa].ToString();
+            
             this.Hide();
-            Form_Menu FormMenu = new Form_Menu();
+            Form_Menu FormMenu = new Form_Menu(this._Usuario);
+            FormMenu.lbl_NomEmpresa.Text = EmpresaSelect;
+            FormMenu.lbl_User.Text = this._Usuario;
             FormMenu.Show();
         }
     }
