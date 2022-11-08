@@ -75,7 +75,7 @@ namespace SISTEMA_NOMINA
             dynamic EmpresaSelect = cb_EmpresasUsuarios.Items[indexEmpresa].ToString();
             
             this.Hide();
-            Form_Menu FormMenu = new Form_Menu(this._Usuario);
+            Form_Menu FormMenu = new Form_Menu(this._Usuario, EmpresaSelect);
             FormMenu.lbl_NomEmpresa.Text = EmpresaSelect;
             FormMenu.lbl_User.Text = this._Usuario;
             FormMenu.Show();

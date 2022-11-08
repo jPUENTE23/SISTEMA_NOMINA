@@ -39,8 +39,8 @@
             this.btn_Inicio = new System.Windows.Forms.Button();
             this.Panel_Logo = new System.Windows.Forms.Panel();
             this.lbl_NomEmpresa = new System.Windows.Forms.Label();
-            this.lbl_User = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_User = new System.Windows.Forms.Label();
             this.Panael_LeftMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Panel_MenuOpciones.SuspendLayout();
@@ -56,7 +56,7 @@
             this.Panael_LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panael_LeftMenu.Location = new System.Drawing.Point(0, 0);
             this.Panael_LeftMenu.Name = "Panael_LeftMenu";
-            this.Panael_LeftMenu.Size = new System.Drawing.Size(200, 542);
+            this.Panael_LeftMenu.Size = new System.Drawing.Size(200, 552);
             this.Panael_LeftMenu.TabIndex = 0;
             // 
             // panel2
@@ -166,42 +166,43 @@
             // 
             this.lbl_NomEmpresa.AutoSize = true;
             this.lbl_NomEmpresa.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NomEmpresa.Location = new System.Drawing.Point(233, 45);
+            this.lbl_NomEmpresa.Location = new System.Drawing.Point(232, 70);
             this.lbl_NomEmpresa.Name = "lbl_NomEmpresa";
             this.lbl_NomEmpresa.Size = new System.Drawing.Size(339, 32);
             this.lbl_NomEmpresa.TabIndex = 3;
             this.lbl_NomEmpresa.Text = "(Nombre de la empresa)";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(238, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lbl_User
             // 
             this.lbl_User.AutoSize = true;
             this.lbl_User.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_User.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbl_User.Location = new System.Drawing.Point(847, 52);
+            this.lbl_User.Location = new System.Drawing.Point(264, 38);
             this.lbl_User.Name = "lbl_User";
             this.lbl_User.Size = new System.Drawing.Size(176, 21);
-            this.lbl_User.TabIndex = 4;
+            this.lbl_User.TabIndex = 6;
             this.lbl_User.Text = "(Nombre dell Usuario)";
-            this.lbl_User.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1029, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.lbl_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 542);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1074, 552);
             this.Controls.Add(this.lbl_User);
             this.Controls.Add(this.lbl_NomEmpresa);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Panael_LeftMenu);
             this.Name = "Form_Menu";
             this.Text = "Form_Menu";
@@ -226,7 +227,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_ExplorarRec;
         public System.Windows.Forms.Label lbl_NomEmpresa;
-        public System.Windows.Forms.Label lbl_User;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lbl_User;
     }
 }

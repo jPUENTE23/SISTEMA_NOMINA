@@ -68,6 +68,7 @@
             // 
             this.txt_Contraseña.Location = new System.Drawing.Point(735, 147);
             this.txt_Contraseña.Name = "txt_Contraseña";
+            this.txt_Contraseña.PasswordChar = '*';
             this.txt_Contraseña.Size = new System.Drawing.Size(240, 20);
             this.txt_Contraseña.TabIndex = 3;
             // 
@@ -180,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1026, 493);
             this.Controls.Add(this.btn_salirApp);
             this.Controls.Add(this.panel2);

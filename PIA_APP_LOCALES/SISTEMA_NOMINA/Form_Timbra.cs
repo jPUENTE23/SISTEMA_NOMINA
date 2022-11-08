@@ -14,10 +14,12 @@ namespace SISTEMA_NOMINA
     public partial class Form_Timbra : Form
     {
         dynamic Usuario_;
-        public Form_Timbra(dynamic usuario)
+        dynamic Empresa_;
+        public Form_Timbra(dynamic usuario, dynamic empresa)
         {
             InitializeComponent();
             this.Usuario_ = usuario;
+            this.Empresa_ = empresa;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -28,7 +30,9 @@ namespace SISTEMA_NOMINA
         private void btn_Regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Menu FormMenu = new Form_Menu(this.Usuario_);
+            Form_Menu FormMenu = new Form_Menu(this.Usuario_, this.Empresa_);
+            FormMenu.lbl_User.Text = this.Usuario_;
+            FormMenu.lbl_NomEmpresa.Text = this.Empresa_;
             FormMenu.Show();
         }
 
