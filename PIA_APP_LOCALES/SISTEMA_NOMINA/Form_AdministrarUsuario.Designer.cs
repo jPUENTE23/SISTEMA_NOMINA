@@ -156,9 +156,11 @@
             this.Controls.Add(this.lbl_NomEmpresa);
             this.Controls.Add(this.lbl_AgrEmpresa);
             this.Controls.Add(this.lbl_Usuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
             this.Name = "Form_AdministrarUsuario";
             this.Text = "Form_AdministrarUsuario";
+            this.BackgroundImageLayoutChanged += new System.EventHandler(this.Form_AdministrarUsuario_BackgroundImageLayoutChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

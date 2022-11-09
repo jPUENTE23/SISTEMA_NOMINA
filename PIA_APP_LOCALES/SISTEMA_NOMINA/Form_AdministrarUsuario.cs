@@ -106,12 +106,18 @@ namespace SISTEMA_NOMINA
                 BD.ConexionSQL.Detalle_Usuario Class_DetalleUsuari = new BD.ConexionSQL.Detalle_Usuario();
                 SqlDataReader EmpresaUsuarios = Class_DetalleUsuari.Empresas_Usuarios(DU_IdUsuario);
 
+                lb_EmprAsignadas.Items.Clear();
                 while (EmpresaUsuarios.Read())
                 {
                     lb_EmprAsignadas.Items.Add(EmpresaUsuarios["Nom_Empresa"].ToString());
                 }
                 
             }
+        }
+
+        private void Form_AdministrarUsuario_BackgroundImageLayoutChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
