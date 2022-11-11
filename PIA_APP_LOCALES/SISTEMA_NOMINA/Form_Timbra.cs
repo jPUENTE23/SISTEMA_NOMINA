@@ -15,6 +15,7 @@ namespace SISTEMA_NOMINA
     {
         dynamic Usuario_;
         dynamic Empresa_;
+        List<ConceptosPercepciones> ListaPercepciones = new List<ConceptosPercepciones>();
         public Form_Timbra(dynamic usuario, dynamic empresa)
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace SISTEMA_NOMINA
         {
 
             int indicePer = cb_Percepciones.SelectedIndex;
-            List<ConceptosPercepciones> ConPercepciones = new List<ConceptosPercepciones>()
+            ListaPercepciones = new List<ConceptosPercepciones>()
             {
                 new ConceptosPercepciones()
                 {
@@ -59,12 +60,13 @@ namespace SISTEMA_NOMINA
                     Clave = Convert.ToInt32(txt_ClavePer.Text),
                     DescPercecepcion = txt_DescPer.Text,
                     Importe = Convert.ToDouble(txt_ImportePer.Text)
+                    
                 }
             };
 
             int indexPercepciones = dataGV_Percepciones.Rows.Add();
 
-            foreach (dynamic dato in ConPercepciones)
+            foreach (dynamic dato in ListaPercepciones)
             {
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[0].Value = dato.ConceptoPercepcion;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[1].Value = dato.Clave;
@@ -89,19 +91,35 @@ namespace SISTEMA_NOMINA
             public double Importe { get; set; }
         }
 
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+
+            /*Obtener las perciones ingresadas para almacenarlas en la base de datos*/
+            List<ConceptosPercepciones> datosPercepciones = ListaPercepciones;
+
+            foreach (dynamic percepcion in datosPercepciones)
+            {
+                dynamic concepto = percepcion.ConceptoPercepcion;
+                lbl_concepto.Text = Convert.ToString(concepto);
+                dynamic Monto = percepcion.Importe;
+                lbl_motno.Text = Convert.ToString(Monto);
+            }
+        }
+
         private void btn_AgregarDed_Click(object sender, EventArgs e)
         {
             int indicePer = cb_Deducciones.SelectedIndex;
             List<ConceptosDeducciones> ConPercepciones = new List<ConceptosDeducciones>()
-            {
-                new ConceptosDeducciones()
                 {
-                    ConceptoDeduccion = cb_Deducciones.Items[indicePer].ToString(),
-                    Clave = Convert.ToInt32(txt_ClaveDed.Text),
-                    DescDeduccion = txt_DescDed.Text,
-                    Importe = Convert.ToDouble(txt_importeDed.Text)
-                }
-            };
+                    new ConceptosDeducciones()
+                    {
+                        ConceptoDeduccion = cb_Deducciones.Items[indicePer].ToString(),
+                        Clave = Convert.ToInt32(txt_ClaveDed.Text),
+                        DescDeduccion = txt_DescDed.Text,
+                        Importe = Convert.ToDouble(txt_importeDed.Text)
+                    }
+                };
 
             int indexDeducciones = dataGV_Deducciones.Rows.Add();
 
@@ -111,12 +129,12 @@ namespace SISTEMA_NOMINA
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[1].Value = dato.Clave;
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[2].Value = dato.DescDeduccion;
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[3].Value = dato.Importe;
+
             }
 
             txt_ClaveDed.Text = "";
             txt_DescDed.Text = "";
             txt_importeDed.Text = "";
-
         }
     }
 }

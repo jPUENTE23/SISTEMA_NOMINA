@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Timbra));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Regresar = new System.Windows.Forms.Button();
             this.Panel_DatosEmpl = new System.Windows.Forms.Panel();
@@ -55,12 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_editar_Per = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.cb_Percepciones = new System.Windows.Forms.ComboBox();
             this.dataGV_Percepciones = new System.Windows.Forms.DataGridView();
             this.col_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,22 +69,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.lbl_concepto = new System.Windows.Forms.Label();
+            this.lbl_motno = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btn_editar_Ded = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.cb_Deducciones = new System.Windows.Forms.ComboBox();
+            this.btn_AgregarDed = new System.Windows.Forms.Button();
+            this.txt_importeDed = new System.Windows.Forms.TextBox();
+            this.txt_DescDed = new System.Windows.Forms.TextBox();
+            this.txt_ClaveDed = new System.Windows.Forms.TextBox();
             this.dataGV_Deducciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_AgregarDed = new System.Windows.Forms.Button();
-            this.txt_importeDed = new System.Windows.Forms.TextBox();
-            this.txt_ClaveDed = new System.Windows.Forms.TextBox();
-            this.txt_DescDed = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.Panel_DatosEmpl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -113,12 +104,12 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1076, 100);
+            this.panel1.Size = new System.Drawing.Size(1099, 67);
             this.panel1.TabIndex = 0;
             // 
             // btn_Regresar
             // 
-            this.btn_Regresar.Location = new System.Drawing.Point(44, 36);
+            this.btn_Regresar.Location = new System.Drawing.Point(30, 21);
             this.btn_Regresar.Name = "btn_Regresar";
             this.btn_Regresar.Size = new System.Drawing.Size(174, 23);
             this.btn_Regresar.TabIndex = 0;
@@ -131,9 +122,9 @@
             this.Panel_DatosEmpl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(67)))));
             this.Panel_DatosEmpl.Controls.Add(this.lbl_DatosEmpl);
             this.Panel_DatosEmpl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel_DatosEmpl.Location = new System.Drawing.Point(0, 100);
+            this.Panel_DatosEmpl.Location = new System.Drawing.Point(0, 67);
             this.Panel_DatosEmpl.Name = "Panel_DatosEmpl";
-            this.Panel_DatosEmpl.Size = new System.Drawing.Size(1076, 45);
+            this.Panel_DatosEmpl.Size = new System.Drawing.Size(1099, 45);
             this.Panel_DatosEmpl.TabIndex = 1;
             // 
             // lbl_DatosEmpl
@@ -155,14 +146,14 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.lbl_RFC);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 145);
+            this.panel2.Location = new System.Drawing.Point(0, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1076, 89);
+            this.panel2.Size = new System.Drawing.Size(1099, 33);
             this.panel2.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(370, 35);
+            this.textBox2.Location = new System.Drawing.Point(370, 6);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(167, 20);
             this.textBox2.TabIndex = 3;
@@ -170,7 +161,7 @@
             // lbl_RazonSocial
             // 
             this.lbl_RazonSocial.AutoSize = true;
-            this.lbl_RazonSocial.Location = new System.Drawing.Point(285, 38);
+            this.lbl_RazonSocial.Location = new System.Drawing.Point(285, 9);
             this.lbl_RazonSocial.Name = "lbl_RazonSocial";
             this.lbl_RazonSocial.Size = new System.Drawing.Size(70, 13);
             this.lbl_RazonSocial.TabIndex = 2;
@@ -178,7 +169,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 35);
+            this.textBox1.Location = new System.Drawing.Point(87, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(167, 20);
             this.textBox1.TabIndex = 1;
@@ -186,7 +177,7 @@
             // lbl_RFC
             // 
             this.lbl_RFC.AutoSize = true;
-            this.lbl_RFC.Location = new System.Drawing.Point(44, 38);
+            this.lbl_RFC.Location = new System.Drawing.Point(44, 9);
             this.lbl_RFC.Name = "lbl_RFC";
             this.lbl_RFC.Size = new System.Drawing.Size(28, 13);
             this.lbl_RFC.TabIndex = 0;
@@ -197,9 +188,9 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(67)))));
             this.panel3.Controls.Add(this.lbl_Nomina);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 234);
+            this.panel3.Location = new System.Drawing.Point(0, 145);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1076, 54);
+            this.panel3.Size = new System.Drawing.Size(1099, 54);
             this.panel3.TabIndex = 3;
             // 
             // lbl_Nomina
@@ -225,15 +216,15 @@
             this.panel4.Controls.Add(this.dt_FechaPag);
             this.panel4.Controls.Add(this.lbl_FechaPag);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 288);
+            this.panel4.Location = new System.Drawing.Point(0, 199);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1076, 136);
+            this.panel4.Size = new System.Drawing.Size(1099, 56);
             this.panel4.TabIndex = 4;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // txt_DiasPagados
             // 
-            this.txt_DiasPagados.Location = new System.Drawing.Point(131, 85);
+            this.txt_DiasPagados.Location = new System.Drawing.Point(850, 17);
             this.txt_DiasPagados.Name = "txt_DiasPagados";
             this.txt_DiasPagados.Size = new System.Drawing.Size(200, 20);
             this.txt_DiasPagados.TabIndex = 7;
@@ -241,7 +232,7 @@
             // lbl_DiasPag
             // 
             this.lbl_DiasPag.AutoSize = true;
-            this.lbl_DiasPag.Location = new System.Drawing.Point(44, 92);
+            this.lbl_DiasPag.Location = new System.Drawing.Point(763, 24);
             this.lbl_DiasPag.Name = "lbl_DiasPag";
             this.lbl_DiasPag.Size = new System.Drawing.Size(73, 13);
             this.lbl_DiasPag.TabIndex = 6;
@@ -249,15 +240,15 @@
             // 
             // dt_FechaFinal
             // 
-            this.dt_FechaFinal.Location = new System.Drawing.Point(460, 86);
+            this.dt_FechaFinal.Location = new System.Drawing.Point(598, 17);
             this.dt_FechaFinal.Name = "dt_FechaFinal";
-            this.dt_FechaFinal.Size = new System.Drawing.Size(200, 20);
+            this.dt_FechaFinal.Size = new System.Drawing.Size(121, 20);
             this.dt_FechaFinal.TabIndex = 5;
             // 
             // lbl_FechaFinal
             // 
             this.lbl_FechaFinal.AutoSize = true;
-            this.lbl_FechaFinal.Location = new System.Drawing.Point(380, 92);
+            this.lbl_FechaFinal.Location = new System.Drawing.Point(518, 23);
             this.lbl_FechaFinal.Name = "lbl_FechaFinal";
             this.lbl_FechaFinal.Size = new System.Drawing.Size(62, 13);
             this.lbl_FechaFinal.TabIndex = 4;
@@ -265,15 +256,15 @@
             // 
             // dt_FechaInicial
             // 
-            this.dt_FechaInicial.Location = new System.Drawing.Point(460, 26);
+            this.dt_FechaInicial.Location = new System.Drawing.Point(359, 16);
             this.dt_FechaInicial.Name = "dt_FechaInicial";
-            this.dt_FechaInicial.Size = new System.Drawing.Size(200, 20);
+            this.dt_FechaInicial.Size = new System.Drawing.Size(125, 20);
             this.dt_FechaInicial.TabIndex = 3;
             // 
             // lbl_FechaInicial
             // 
             this.lbl_FechaInicial.AutoSize = true;
-            this.lbl_FechaInicial.Location = new System.Drawing.Point(380, 32);
+            this.lbl_FechaInicial.Location = new System.Drawing.Point(279, 22);
             this.lbl_FechaInicial.Name = "lbl_FechaInicial";
             this.lbl_FechaInicial.Size = new System.Drawing.Size(67, 13);
             this.lbl_FechaInicial.TabIndex = 2;
@@ -281,15 +272,15 @@
             // 
             // dt_FechaPag
             // 
-            this.dt_FechaPag.Location = new System.Drawing.Point(131, 27);
+            this.dt_FechaPag.Location = new System.Drawing.Point(132, 15);
             this.dt_FechaPag.Name = "dt_FechaPag";
-            this.dt_FechaPag.Size = new System.Drawing.Size(200, 20);
+            this.dt_FechaPag.Size = new System.Drawing.Size(123, 20);
             this.dt_FechaPag.TabIndex = 1;
             // 
             // lbl_FechaPag
             // 
             this.lbl_FechaPag.AutoSize = true;
-            this.lbl_FechaPag.Location = new System.Drawing.Point(44, 34);
+            this.lbl_FechaPag.Location = new System.Drawing.Point(45, 22);
             this.lbl_FechaPag.Name = "lbl_FechaPag";
             this.lbl_FechaPag.Size = new System.Drawing.Size(65, 13);
             this.lbl_FechaPag.TabIndex = 0;
@@ -303,9 +294,9 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 424);
+            this.panel5.Location = new System.Drawing.Point(0, 255);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1076, 47);
+            this.panel5.Size = new System.Drawing.Size(1099, 47);
             this.panel5.TabIndex = 5;
             // 
             // label4
@@ -355,12 +346,6 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.btn_editar_Per);
-            this.panel6.Controls.Add(this.comboBox2);
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.textBox4);
-            this.panel6.Controls.Add(this.textBox5);
             this.panel6.Controls.Add(this.cb_Percepciones);
             this.panel6.Controls.Add(this.dataGV_Percepciones);
             this.panel6.Controls.Add(this.btn_AgregarPer);
@@ -368,58 +353,10 @@
             this.panel6.Controls.Add(this.txt_DescPer);
             this.panel6.Controls.Add(this.txt_ClavePer);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 471);
+            this.panel6.Location = new System.Drawing.Point(0, 302);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1076, 220);
+            this.panel6.Size = new System.Drawing.Size(1099, 143);
             this.panel6.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(1010, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btn_editar_Per
-            // 
-            this.btn_editar_Per.Location = new System.Drawing.Point(948, 47);
-            this.btn_editar_Per.Name = "btn_editar_Per";
-            this.btn_editar_Per.Size = new System.Drawing.Size(56, 23);
-            this.btn_editar_Per.TabIndex = 11;
-            this.btn_editar_Per.Text = "Editar";
-            this.btn_editar_Per.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(47, 50);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(171, 21);
-            this.comboBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(786, 50);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(120, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(370, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(378, 20);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(243, 50);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(105, 20);
-            this.textBox5.TabIndex = 7;
             // 
             // cb_Percepciones
             // 
@@ -442,9 +379,9 @@
             this.col_ClavePer,
             this.col_DescripcionPer,
             this.col_ImportePer});
-            this.dataGV_Percepciones.Location = new System.Drawing.Point(48, 96);
+            this.dataGV_Percepciones.Location = new System.Drawing.Point(47, 46);
             this.dataGV_Percepciones.Name = "dataGV_Percepciones";
-            this.dataGV_Percepciones.Size = new System.Drawing.Size(993, 104);
+            this.dataGV_Percepciones.Size = new System.Drawing.Size(994, 75);
             this.dataGV_Percepciones.TabIndex = 5;
             // 
             // col_Percepcion
@@ -506,9 +443,9 @@
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 691);
+            this.panel7.Location = new System.Drawing.Point(0, 445);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1076, 48);
+            this.panel7.Size = new System.Drawing.Size(1099, 48);
             this.panel7.TabIndex = 7;
             // 
             // label5
@@ -555,75 +492,91 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "Deduccion";
             // 
+            // btn_agregar
+            // 
+            this.btn_agregar.AllowDrop = true;
+            this.btn_agregar.Location = new System.Drawing.Point(644, 661);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregar.TabIndex = 8;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // lbl_concepto
+            // 
+            this.lbl_concepto.AutoSize = true;
+            this.lbl_concepto.Location = new System.Drawing.Point(376, 671);
+            this.lbl_concepto.Name = "lbl_concepto";
+            this.lbl_concepto.Size = new System.Drawing.Size(35, 13);
+            this.lbl_concepto.TabIndex = 9;
+            this.lbl_concepto.Text = "label9";
+            // 
+            // lbl_motno
+            // 
+            this.lbl_motno.AutoSize = true;
+            this.lbl_motno.Location = new System.Drawing.Point(458, 671);
+            this.lbl_motno.Name = "lbl_motno";
+            this.lbl_motno.Size = new System.Drawing.Size(41, 13);
+            this.lbl_motno.TabIndex = 13;
+            this.lbl_motno.Text = "label12";
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel8.Controls.Add(this.btn_editar_Ded);
-            this.panel8.Controls.Add(this.comboBox4);
-            this.panel8.Controls.Add(this.textBox6);
-            this.panel8.Controls.Add(this.textBox10);
-            this.panel8.Controls.Add(this.textBox11);
-            this.panel8.Controls.Add(this.cb_Deducciones);
             this.panel8.Controls.Add(this.dataGV_Deducciones);
+            this.panel8.Controls.Add(this.cb_Deducciones);
             this.panel8.Controls.Add(this.btn_AgregarDed);
-            this.panel8.Controls.Add(this.txt_importeDed);
             this.panel8.Controls.Add(this.txt_ClaveDed);
+            this.panel8.Controls.Add(this.txt_importeDed);
             this.panel8.Controls.Add(this.txt_DescDed);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 739);
+            this.panel8.Location = new System.Drawing.Point(0, 493);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1076, 336);
-            this.panel8.TabIndex = 8;
-            // 
-            // btn_editar_Ded
-            // 
-            this.btn_editar_Ded.Location = new System.Drawing.Point(948, 42);
-            this.btn_editar_Ded.Name = "btn_editar_Ded";
-            this.btn_editar_Ded.Size = new System.Drawing.Size(56, 23);
-            this.btn_editar_Ded.TabIndex = 17;
-            this.btn_editar_Ded.Text = "Ediar";
-            this.btn_editar_Ded.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(48, 44);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(170, 21);
-            this.comboBox4.TabIndex = 16;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(786, 44);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 15;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(243, 44);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(105, 20);
-            this.textBox10.TabIndex = 13;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(370, 44);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(378, 20);
-            this.textBox11.TabIndex = 14;
+            this.panel8.Size = new System.Drawing.Size(1099, 152);
+            this.panel8.TabIndex = 14;
             // 
             // cb_Deducciones
             // 
             this.cb_Deducciones.FormattingEnabled = true;
             this.cb_Deducciones.Items.AddRange(new object[] {
             "ISR",
-            "IMSS",
-            "Ausencia"});
-            this.cb_Deducciones.Location = new System.Drawing.Point(48, 8);
+            "Faltas"});
+            this.cb_Deducciones.Location = new System.Drawing.Point(48, 6);
             this.cb_Deducciones.Name = "cb_Deducciones";
-            this.cb_Deducciones.Size = new System.Drawing.Size(170, 21);
-            this.cb_Deducciones.TabIndex = 12;
+            this.cb_Deducciones.Size = new System.Drawing.Size(171, 21);
+            this.cb_Deducciones.TabIndex = 17;
+            // 
+            // btn_AgregarDed
+            // 
+            this.btn_AgregarDed.Location = new System.Drawing.Point(947, 4);
+            this.btn_AgregarDed.Name = "btn_AgregarDed";
+            this.btn_AgregarDed.Size = new System.Drawing.Size(93, 23);
+            this.btn_AgregarDed.TabIndex = 16;
+            this.btn_AgregarDed.Text = "Agregar";
+            this.btn_AgregarDed.UseVisualStyleBackColor = true;
+            this.btn_AgregarDed.Click += new System.EventHandler(this.btn_AgregarDed_Click);
+            // 
+            // txt_importeDed
+            // 
+            this.txt_importeDed.Location = new System.Drawing.Point(788, 6);
+            this.txt_importeDed.Name = "txt_importeDed";
+            this.txt_importeDed.Size = new System.Drawing.Size(120, 20);
+            this.txt_importeDed.TabIndex = 15;
+            // 
+            // txt_DescDed
+            // 
+            this.txt_DescDed.Location = new System.Drawing.Point(370, 6);
+            this.txt_DescDed.Name = "txt_DescDed";
+            this.txt_DescDed.Size = new System.Drawing.Size(378, 20);
+            this.txt_DescDed.TabIndex = 14;
+            // 
+            // txt_ClaveDed
+            // 
+            this.txt_ClaveDed.Location = new System.Drawing.Point(243, 7);
+            this.txt_ClaveDed.Name = "txt_ClaveDed";
+            this.txt_ClaveDed.Size = new System.Drawing.Size(105, 20);
+            this.txt_ClaveDed.TabIndex = 13;
             // 
             // dataGV_Deducciones
             // 
@@ -633,10 +586,10 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGV_Deducciones.Location = new System.Drawing.Point(47, 89);
+            this.dataGV_Deducciones.Location = new System.Drawing.Point(48, 49);
             this.dataGV_Deducciones.Name = "dataGV_Deducciones";
-            this.dataGV_Deducciones.Size = new System.Drawing.Size(994, 90);
-            this.dataGV_Deducciones.TabIndex = 11;
+            this.dataGV_Deducciones.Size = new System.Drawing.Size(992, 75);
+            this.dataGV_Deducciones.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -658,44 +611,16 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // btn_AgregarDed
-            // 
-            this.btn_AgregarDed.Location = new System.Drawing.Point(948, 4);
-            this.btn_AgregarDed.Name = "btn_AgregarDed";
-            this.btn_AgregarDed.Size = new System.Drawing.Size(93, 23);
-            this.btn_AgregarDed.TabIndex = 10;
-            this.btn_AgregarDed.Text = "Agregar";
-            this.btn_AgregarDed.UseVisualStyleBackColor = true;
-            this.btn_AgregarDed.Click += new System.EventHandler(this.btn_AgregarDed_Click);
-            // 
-            // txt_importeDed
-            // 
-            this.txt_importeDed.Location = new System.Drawing.Point(786, 8);
-            this.txt_importeDed.Name = "txt_importeDed";
-            this.txt_importeDed.Size = new System.Drawing.Size(120, 20);
-            this.txt_importeDed.TabIndex = 9;
-            // 
-            // txt_ClaveDed
-            // 
-            this.txt_ClaveDed.Location = new System.Drawing.Point(243, 8);
-            this.txt_ClaveDed.Name = "txt_ClaveDed";
-            this.txt_ClaveDed.Size = new System.Drawing.Size(105, 20);
-            this.txt_ClaveDed.TabIndex = 7;
-            // 
-            // txt_DescDed
-            // 
-            this.txt_DescDed.Location = new System.Drawing.Point(370, 8);
-            this.txt_DescDed.Name = "txt_DescDed";
-            this.txt_DescDed.Size = new System.Drawing.Size(378, 20);
-            this.txt_DescDed.TabIndex = 8;
-            // 
             // Form_Timbra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1093, 749);
+            this.ClientSize = new System.Drawing.Size(1099, 750);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.lbl_motno);
+            this.Controls.Add(this.lbl_concepto);
+            this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -726,6 +651,7 @@
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_Deducciones)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -771,28 +697,20 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cb_Percepciones;
+        private System.Windows.Forms.Button btn_agregar;
+        private System.Windows.Forms.Label lbl_concepto;
+        private System.Windows.Forms.Label lbl_motno;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ComboBox cb_Deducciones;
+        private System.Windows.Forms.Button btn_AgregarDed;
+        private System.Windows.Forms.TextBox txt_ClaveDed;
+        private System.Windows.Forms.TextBox txt_importeDed;
+        private System.Windows.Forms.TextBox txt_DescDed;
         private System.Windows.Forms.DataGridView dataGV_Deducciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button btn_AgregarDed;
-        private System.Windows.Forms.TextBox txt_importeDed;
-        private System.Windows.Forms.TextBox txt_ClaveDed;
-        private System.Windows.Forms.TextBox txt_DescDed;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_editar_Per;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox cb_Percepciones;
-        private System.Windows.Forms.Button btn_editar_Ded;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.ComboBox cb_Deducciones;
     }
 }
