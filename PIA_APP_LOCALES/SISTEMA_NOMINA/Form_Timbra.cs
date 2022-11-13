@@ -16,8 +16,8 @@ namespace SISTEMA_NOMINA
         dynamic Usuario_;
         dynamic Empresa_;
         List<ConceptosPercepciones> ListaPercepciones = new List<ConceptosPercepciones>();
-        List<dynamic> ConceptosPer = new List<dynamic>();
         List<ConceptosDeducciones> ListaDeducciones = new List<ConceptosDeducciones>();
+        List<ConceptosOtrosPagos> ListaOtrosPafos = new List<ConceptosOtrosPagos>();
         public Form_Timbra(dynamic usuario, dynamic empresa)
         {
             InitializeComponent();
@@ -145,6 +145,27 @@ namespace SISTEMA_NOMINA
             txt_ClaveDed.Text = "";
             txt_DescDed.Text = "";
             txt_importeDed.Text = "";
+        }
+
+
+        class ConceptosOtrosPagos
+        {
+            public string ConceptoDtrosPagos { get; set; }
+            public int ClaveOtrosPagos { get; set; }
+            public dynamic DescOtrosPagos { get; set; }
+            public double ImporteOtrosPagos { get; set; }
+        }
+
+        private void btn_AgregarOP_Click(object sender, EventArgs e)
+        {
+            int indexOP = cb_TipoOp.SelectedIndex;
+            ListaOtrosPafos.Add(new ConceptosOtrosPagos()
+            {
+                ConceptoDtrosPagos = cb_TipoOp.Items[indexOP].ToString(),
+                ClaveOtrosPagos = Convert.ToInt32(txt_ClaveOP.Text),
+                DescOtrosPagos = txt_DescOP.Text,
+                ImporteOtrosPagos = Convert.ToDouble(txt_ImporteOP.Text)
+            });
         }
     }
 }

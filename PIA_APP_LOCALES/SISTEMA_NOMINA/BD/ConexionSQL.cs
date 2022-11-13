@@ -255,7 +255,6 @@ namespace SISTEMA_NOMINA.BD
                 double Percepciones,
                 double Deducciones,
                 double Otros_Pagos,
-                double Subtotal,
                 double ISR,
                 double Neto,
                 int ID_Empresa)
@@ -274,7 +273,6 @@ namespace SISTEMA_NOMINA.BD
                 cmd.Parameters.AddWithValue("@Percepciones", Percepciones);
                 cmd.Parameters.AddWithValue("@Deducciones", Deducciones);
                 cmd.Parameters.AddWithValue("@Otros_Pagos", Otros_Pagos);
-                cmd.Parameters.AddWithValue("@Subtotal", Subtotal);
                 cmd.Parameters.AddWithValue("@ISR", ISR);
                 cmd.Parameters.AddWithValue("@Neto", Neto);
                 cmd.Parameters.AddWithValue("@ID_Empresa", ID_Empresa);
