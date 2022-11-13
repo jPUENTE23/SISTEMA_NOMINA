@@ -97,6 +97,7 @@ namespace SISTEMA_NOMINA
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             BD.ConexionSQL.Timbra ConnTimbra = new BD.ConexionSQL.Timbra();
+            BD.ConexionSQL.Empresa ConnEmpresa = new BD.ConexionSQL.Empresa();
             /* Obetemos las percepciones y deducciones ingresadas */
             List<ConceptosPercepciones> datosPercepciones = ListaPercepciones;
             List<ConceptosDeducciones> datosDeducciones = ListaDeducciones;
@@ -133,12 +134,21 @@ namespace SISTEMA_NOMINA
                 sumOtrosPagos += OtrosP.ImporteOtrosPagos;
             }
             double TotalOtrosP = sumOtrosPagos;
+            int idEmpresa = 0;
 
-            double ImporteNeto = TotalPercepciones - TotalDeduccion + TotalPercepciones;
+            SqlDataReader getIdEmpresa = ConnEmpresa.ID_Empresa(this.Empresa_);
+
+            if (getIdEmpresa.Read())
+            {
+                idEmpresa = Convert.ToInt16(getIdEmpresa["ID_Empresa"]);
+            }
+
+            double ImporteNeto = TotalPercepciones - TotalDeduccion + TotalOtrosP;
 
             SqlDataReader id_recibo = ConnTimbra.Gen_Recibo(
                 Nom_Empleado,
                 RFC_Empleado,
+                FechaEmisiion,
                 FechaPago,
                 FechaInicial,
                 FechaFinal,
@@ -146,12 +156,17 @@ namespace SISTEMA_NOMINA
                 TotalPercepciones,
                 TotalDeduccion,
                 TotalOtrosP,
-                TotalOtrosP,
-                ImporteNeto);
+                ImporteNeto,
+                idEmpresa);
 
-            
+            int idRecibo = 0;
 
-            lbl_motno.Text = Convert.ToString(FechaPago);
+            if (id_recibo.Read())
+            {
+                idRecibo = Convert.ToInt16(id_recibo[0]);
+            }
+
+            lbl_motno.Text = Convert.ToString(idRecibo);
         }
 
         private void btn_AgregarDed_Click(object sender, EventArgs e)

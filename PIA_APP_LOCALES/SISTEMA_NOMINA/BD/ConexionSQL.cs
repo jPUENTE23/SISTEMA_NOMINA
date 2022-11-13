@@ -266,7 +266,7 @@ namespace SISTEMA_NOMINA.BD
                 cmd.Parameters.AddWithValue("@RFC_Empleado", RFC_Empleado);
                 cmd.Parameters.AddWithValue("@Fecha_Emision", Fecha_Emision);
                 cmd.Parameters.AddWithValue("@Fecha_Pago", Fecha_Pago);
-                cmd.Parameters.AddWithValue("@Fecha_Inicial", Fecha_Final);
+                cmd.Parameters.AddWithValue("@Fecha_Inicial", Fecha_Inicial);
                 cmd.Parameters.AddWithValue("@Fecha_Final", Fecha_Final);
                 cmd.Parameters.AddWithValue("@Dias_Pagados", Dias_Pagados);
                 cmd.Parameters.AddWithValue("@Percepciones", Percepciones);
