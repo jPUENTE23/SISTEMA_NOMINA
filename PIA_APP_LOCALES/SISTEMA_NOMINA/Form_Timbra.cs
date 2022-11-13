@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace SISTEMA_NOMINA
@@ -17,7 +18,7 @@ namespace SISTEMA_NOMINA
         dynamic Empresa_;
         List<ConceptosPercepciones> ListaPercepciones = new List<ConceptosPercepciones>();
         List<ConceptosDeducciones> ListaDeducciones = new List<ConceptosDeducciones>();
-        List<ConceptosOtrosPagos> ListaOtrosPafos = new List<ConceptosOtrosPagos>();
+        List<ConceptosOtrosPagos> ListaOtrosPagos = new List<ConceptosOtrosPagos>();
         public Form_Timbra(dynamic usuario, dynamic empresa)
         {
             InitializeComponent();
@@ -63,13 +64,17 @@ namespace SISTEMA_NOMINA
             });
 
             int indexPercepciones = dataGV_Percepciones.Rows.Add();
+
+            double calPer = 0;
             foreach (dynamic dato in ListaPercepciones)
             {
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[0].Value = dato.ConceptoPercepcion;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[1].Value = dato.Clave;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[2].Value = dato.DescPercecepcion;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[3].Value = dato.Importe;
+                calPer += dato.Importe;
             }
+            lbl_TotalPer.Text = "$" + Convert.ToString(calPer);
 
             txt_ClavePer.Text = "";
             txt_DescPer.Text = "";
@@ -91,9 +96,11 @@ namespace SISTEMA_NOMINA
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            BD.ConexionSQL.Timbra ConnTimbra = new BD.ConexionSQL.Timbra();
             /* Obetemos las percepciones y deducciones ingresadas */
             List<ConceptosPercepciones> datosPercepciones = ListaPercepciones;
             List<ConceptosDeducciones> datosDeducciones = ListaDeducciones;
+            List<ConceptosOtrosPagos> datosOtrosPagos = ListaOtrosPagos;
 
             dynamic RFC_Empleado = txt_RFC_Empleado.Text;
             dynamic Nom_Empleado = txt_NomEmpleado.Text;
@@ -101,9 +108,10 @@ namespace SISTEMA_NOMINA
             DateTime FechaPago = dt_FechaPag.Value;
             DateTime FechaInicial = dt_FechaInicial.Value;
             DateTime FechaFinal = dt_FechaFinal.Value;
-            //int DiasPagados = int.Parse(txt_DiasPagados.Text);
+            int DiasPagados = int.Parse(txt_DiasPagados.Text);
             double sumPerceppciones = 0;
             double sumDeduccion = 0;
+            double sumOtrosPagos = 0;
             
             /* Calculo de las perciones*/
             foreach (dynamic percepcion in datosPercepciones)
@@ -118,6 +126,32 @@ namespace SISTEMA_NOMINA
                 sumDeduccion += dedcuccion.Importe;
             }
             double TotalDeduccion = sumDeduccion;
+
+            /* Calcular otros pagos */
+            foreach (dynamic OtrosP in datosOtrosPagos)
+            {
+                sumOtrosPagos += OtrosP.ImporteOtrosPagos;
+            }
+            double TotalOtrosP = sumOtrosPagos;
+
+            double ImporteNeto = TotalPercepciones - TotalDeduccion + TotalPercepciones;
+
+            SqlDataReader id_recibo = ConnTimbra.Gen_Recibo(
+                Nom_Empleado,
+                RFC_Empleado,
+                FechaPago,
+                FechaInicial,
+                FechaFinal,
+                DiasPagados,
+                TotalPercepciones,
+                TotalDeduccion,
+                TotalOtrosP,
+                TotalOtrosP,
+                ImporteNeto);
+
+            
+
+            lbl_motno.Text = Convert.ToString(FechaPago);
         }
 
         private void btn_AgregarDed_Click(object sender, EventArgs e)
@@ -133,14 +167,18 @@ namespace SISTEMA_NOMINA
                
             int indexDeducciones = dataGV_Deducciones.Rows.Add();
 
+            double calDed = 0;
             foreach (dynamic dato in ListaDeducciones)
             {
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[0].Value = dato.ConceptoDeduccion;
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[1].Value = dato.Clave;
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[2].Value = dato.DescDeduccion;
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[3].Value = dato.Importe;
+                calDed += dato.Importe;
 
             }
+            lbl_TotalDed.Text = "$" + Convert.ToString(calDed);
+
 
             txt_ClaveDed.Text = "";
             txt_DescDed.Text = "";
@@ -159,13 +197,29 @@ namespace SISTEMA_NOMINA
         private void btn_AgregarOP_Click(object sender, EventArgs e)
         {
             int indexOP = cb_TipoOp.SelectedIndex;
-            ListaOtrosPafos.Add(new ConceptosOtrosPagos()
+            ListaOtrosPagos.Add(new ConceptosOtrosPagos()
             {
                 ConceptoDtrosPagos = cb_TipoOp.Items[indexOP].ToString(),
                 ClaveOtrosPagos = Convert.ToInt32(txt_ClaveOP.Text),
                 DescOtrosPagos = txt_DescOP.Text,
                 ImporteOtrosPagos = Convert.ToDouble(txt_ImporteOP.Text)
             });
+
+            int idexOtrosPagos = dataGV_OtrosPagos.Rows.Add();
+            double calOtrosP = 0;
+            foreach (dynamic otrosP in ListaOtrosPagos)
+            {
+                dataGV_OtrosPagos.Rows[idexOtrosPagos].Cells[0].Value = otrosP.ConceptoDtrosPagos;
+                dataGV_OtrosPagos.Rows[idexOtrosPagos].Cells[1].Value = otrosP.ClaveOtrosPagos;
+                dataGV_OtrosPagos.Rows[idexOtrosPagos].Cells[2].Value = otrosP.DescOtrosPagos;
+                dataGV_OtrosPagos.Rows[idexOtrosPagos].Cells[3].Value = otrosP.ImporteOtrosPagos;
+                calOtrosP += otrosP.ImporteOtrosPagos;
+            }
+            lbl_TotalOP.Text = "$" + Convert.ToString(calOtrosP);
+
+            txt_ClaveOP.Clear();
+            txt_DescOP.Clear();
+            txt_ImporteOP.Clear();
         }
     }
 }
