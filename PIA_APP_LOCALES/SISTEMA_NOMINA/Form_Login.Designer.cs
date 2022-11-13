@@ -51,7 +51,7 @@
             // 
             this.lbl_Usuario.AutoSize = true;
             this.lbl_Usuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Usuario.Location = new System.Drawing.Point(731, 67);
+            this.lbl_Usuario.Location = new System.Drawing.Point(731, 47);
             this.lbl_Usuario.Name = "lbl_Usuario";
             this.lbl_Usuario.Size = new System.Drawing.Size(65, 19);
             this.lbl_Usuario.TabIndex = 0;
@@ -59,14 +59,14 @@
             // 
             // txt_Usuario
             // 
-            this.txt_Usuario.Location = new System.Drawing.Point(735, 89);
+            this.txt_Usuario.Location = new System.Drawing.Point(735, 69);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(240, 20);
             this.txt_Usuario.TabIndex = 1;
             // 
             // txt_Contraseña
             // 
-            this.txt_Contraseña.Location = new System.Drawing.Point(735, 147);
+            this.txt_Contraseña.Location = new System.Drawing.Point(735, 127);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.PasswordChar = '*';
             this.txt_Contraseña.Size = new System.Drawing.Size(240, 20);
@@ -76,7 +76,7 @@
             // 
             this.lbl_Contraseña.AutoSize = true;
             this.lbl_Contraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Contraseña.Location = new System.Drawing.Point(731, 125);
+            this.lbl_Contraseña.Location = new System.Drawing.Point(731, 105);
             this.lbl_Contraseña.Name = "lbl_Contraseña";
             this.lbl_Contraseña.Size = new System.Drawing.Size(98, 19);
             this.lbl_Contraseña.TabIndex = 2;
@@ -88,7 +88,7 @@
             this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Ingresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Ingresar.Location = new System.Drawing.Point(735, 200);
+            this.btn_Ingresar.Location = new System.Drawing.Point(735, 180);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(240, 36);
             this.btn_Ingresar.TabIndex = 4;
@@ -102,7 +102,7 @@
             this.btn_CrearEmpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearEmpr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearEmpr.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearEmpr.Location = new System.Drawing.Point(735, 331);
+            this.btn_CrearEmpr.Location = new System.Drawing.Point(735, 311);
             this.btn_CrearEmpr.Name = "btn_CrearEmpr";
             this.btn_CrearEmpr.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearEmpr.TabIndex = 6;
@@ -116,7 +116,7 @@
             this.btn_CrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearUsuario.Location = new System.Drawing.Point(735, 289);
+            this.btn_CrearUsuario.Location = new System.Drawing.Point(735, 269);
             this.btn_CrearUsuario.Name = "btn_CrearUsuario";
             this.btn_CrearUsuario.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearUsuario.TabIndex = 7;
@@ -169,7 +169,7 @@
             this.btn_salirApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salirApp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salirApp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_salirApp.Location = new System.Drawing.Point(735, 420);
+            this.btn_salirApp.Location = new System.Drawing.Point(735, 400);
             this.btn_salirApp.Name = "btn_salirApp";
             this.btn_salirApp.Size = new System.Drawing.Size(240, 36);
             this.btn_salirApp.TabIndex = 11;

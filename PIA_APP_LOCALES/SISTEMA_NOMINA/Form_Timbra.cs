@@ -16,6 +16,8 @@ namespace SISTEMA_NOMINA
         dynamic Usuario_;
         dynamic Empresa_;
         List<ConceptosPercepciones> ListaPercepciones = new List<ConceptosPercepciones>();
+        List<dynamic> ConceptosPer = new List<dynamic>();
+        List<ConceptosDeducciones> ListaDeducciones = new List<ConceptosDeducciones>();
         public Form_Timbra(dynamic usuario, dynamic empresa)
         {
             InitializeComponent();
@@ -50,22 +52,17 @@ namespace SISTEMA_NOMINA
 
         private void btn_AgregarPer_Click(object sender, EventArgs e)
         {
-
             int indicePer = cb_Percepciones.SelectedIndex;
-            ListaPercepciones = new List<ConceptosPercepciones>()
+            ListaPercepciones.Add(new ConceptosPercepciones()
             {
-                new ConceptosPercepciones()
-                {
-                    ConceptoPercepcion = cb_Percepciones.Items[indicePer].ToString(),
-                    Clave = Convert.ToInt32(txt_ClavePer.Text),
-                    DescPercecepcion = txt_DescPer.Text,
-                    Importe = Convert.ToDouble(txt_ImportePer.Text)
-                    
-                }
-            };
+                ConceptoPercepcion = cb_Percepciones.Items[indicePer].ToString(),
+                Clave = Convert.ToInt32(txt_ClavePer.Text),
+                DescPercecepcion = txt_DescPer.Text,
+                Importe = Convert.ToDouble(txt_ImportePer.Text)
+
+            });
 
             int indexPercepciones = dataGV_Percepciones.Rows.Add();
-
             foreach (dynamic dato in ListaPercepciones)
             {
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[0].Value = dato.ConceptoPercepcion;
@@ -94,36 +91,49 @@ namespace SISTEMA_NOMINA
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-
-            /*Obtener las perciones ingresadas para almacenarlas en la base de datos*/
+            /* Obetemos las percepciones y deducciones ingresadas */
             List<ConceptosPercepciones> datosPercepciones = ListaPercepciones;
+            List<ConceptosDeducciones> datosDeducciones = ListaDeducciones;
 
+            dynamic RFC_Empleado = txt_RFC_Empleado.Text;
+            dynamic Nom_Empleado = txt_NomEmpleado.Text;
+            DateTime FechaEmisiion = DateTime.Now;
+            DateTime FechaPago = dt_FechaPag.Value;
+            DateTime FechaInicial = dt_FechaInicial.Value;
+            DateTime FechaFinal = dt_FechaFinal.Value;
+            //int DiasPagados = int.Parse(txt_DiasPagados.Text);
+            double sumPerceppciones = 0;
+            double sumDeduccion = 0;
+            
+            /* Calculo de las perciones*/
             foreach (dynamic percepcion in datosPercepciones)
             {
-                dynamic concepto = percepcion.ConceptoPercepcion;
-                lbl_concepto.Text = Convert.ToString(concepto);
-                dynamic Monto = percepcion.Importe;
-                lbl_motno.Text = Convert.ToString(Monto);
+                sumPerceppciones += percepcion.Importe;
             }
+            double TotalPercepciones = sumPerceppciones;
+
+            /* Calculo de las deudciones */
+            foreach (dynamic dedcuccion in datosDeducciones)
+            {
+                sumDeduccion += dedcuccion.Importe;
+            }
+            double TotalDeduccion = sumDeduccion;
         }
 
         private void btn_AgregarDed_Click(object sender, EventArgs e)
         {
             int indicePer = cb_Deducciones.SelectedIndex;
-            List<ConceptosDeducciones> ConPercepciones = new List<ConceptosDeducciones>()
-                {
-                    new ConceptosDeducciones()
-                    {
-                        ConceptoDeduccion = cb_Deducciones.Items[indicePer].ToString(),
-                        Clave = Convert.ToInt32(txt_ClaveDed.Text),
-                        DescDeduccion = txt_DescDed.Text,
-                        Importe = Convert.ToDouble(txt_importeDed.Text)
-                    }
-                };
-
+            ListaDeducciones.Add(new ConceptosDeducciones()
+            {
+                ConceptoDeduccion = cb_Deducciones.Items[indicePer].ToString(),
+                Clave = Convert.ToInt32(txt_ClaveDed.Text),
+                DescDeduccion = txt_DescDed.Text,
+                Importe = Convert.ToDouble(txt_importeDed.Text)
+            });
+               
             int indexDeducciones = dataGV_Deducciones.Rows.Add();
 
-            foreach (dynamic dato in ConPercepciones)
+            foreach (dynamic dato in ListaDeducciones)
             {
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[0].Value = dato.ConceptoDeduccion;
                 dataGV_Deducciones.Rows[indexDeducciones].Cells[1].Value = dato.Clave;

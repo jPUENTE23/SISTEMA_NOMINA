@@ -238,5 +238,51 @@ namespace SISTEMA_NOMINA.BD
             }
 
         }
+
+        public class Timbra
+        {
+            private Conexion GenRec_Conn = new Conexion();
+            SqlCommand cmd = new SqlCommand();
+
+            public SqlDataReader Gen_Recibo(
+                dynamic Nom_Empleado,
+                dynamic RFC_Empleado,
+                DateTime Fecha_Emision,
+                DateTime Fecha_Pago,
+                DateTime Fecha_Inicial,
+                DateTime Fecha_Final,
+                int Dias_Pagados,
+                double Percepciones,
+                double Deducciones,
+                double Otros_Pagos,
+                double Subtotal,
+                double ISR,
+                double Neto,
+                int ID_Empresa)
+            {
+                cmd.Connection = GenRec_Conn.AbrirConexioBD();
+                cmd.CommandText = "SP_GEN_RECIBO_NOM";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Nom_Empleado", Nom_Empleado);
+                cmd.Parameters.AddWithValue("@RFC_Empleado", RFC_Empleado);
+                cmd.Parameters.AddWithValue("@Fecha_Emision", Fecha_Emision);
+                cmd.Parameters.AddWithValue("@Fecha_Pago", Fecha_Pago);
+                cmd.Parameters.AddWithValue("@Fecha_Inicial", Fecha_Final);
+                cmd.Parameters.AddWithValue("@Fecha_Final", Fecha_Final);
+                cmd.Parameters.AddWithValue("@Dias_Pagados", Dias_Pagados);
+                cmd.Parameters.AddWithValue("@Percepciones", Percepciones);
+                cmd.Parameters.AddWithValue("@Deducciones", Deducciones);
+                cmd.Parameters.AddWithValue("@Otros_Pagos", Otros_Pagos);
+                cmd.Parameters.AddWithValue("@Subtotal", Subtotal);
+                cmd.Parameters.AddWithValue("@ISR", ISR);
+                cmd.Parameters.AddWithValue("@Neto", Neto);
+                cmd.Parameters.AddWithValue("@ID_Empresa", ID_Empresa);
+
+                SqlDataReader Id_Recibo = cmd.ExecuteReader();
+
+                return Id_Recibo;
+            }
+        }
     }
 }

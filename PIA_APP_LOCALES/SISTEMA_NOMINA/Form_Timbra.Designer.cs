@@ -33,9 +33,9 @@
             this.Panel_DatosEmpl = new System.Windows.Forms.Panel();
             this.lbl_DatosEmpl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_NomEmpleado = new System.Windows.Forms.TextBox();
             this.lbl_RazonSocial = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_RFC_Empleado = new System.Windows.Forms.TextBox();
             this.lbl_RFC = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_Nomina = new System.Windows.Forms.Label();
@@ -73,16 +73,17 @@
             this.lbl_concepto = new System.Windows.Forms.Label();
             this.lbl_motno = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.cb_Deducciones = new System.Windows.Forms.ComboBox();
-            this.btn_AgregarDed = new System.Windows.Forms.Button();
-            this.txt_importeDed = new System.Windows.Forms.TextBox();
-            this.txt_DescDed = new System.Windows.Forms.TextBox();
-            this.txt_ClaveDed = new System.Windows.Forms.TextBox();
             this.dataGV_Deducciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cb_Deducciones = new System.Windows.Forms.ComboBox();
+            this.btn_AgregarDed = new System.Windows.Forms.Button();
+            this.txt_ClaveDed = new System.Windows.Forms.TextBox();
+            this.txt_importeDed = new System.Windows.Forms.TextBox();
+            this.txt_DescDed = new System.Windows.Forms.TextBox();
+            this.lb_Montos = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.Panel_DatosEmpl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,7 +105,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1099, 67);
+            this.panel1.Size = new System.Drawing.Size(1082, 67);
             this.panel1.TabIndex = 0;
             // 
             // btn_Regresar
@@ -124,7 +125,7 @@
             this.Panel_DatosEmpl.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_DatosEmpl.Location = new System.Drawing.Point(0, 67);
             this.Panel_DatosEmpl.Name = "Panel_DatosEmpl";
-            this.Panel_DatosEmpl.Size = new System.Drawing.Size(1099, 45);
+            this.Panel_DatosEmpl.Size = new System.Drawing.Size(1082, 45);
             this.Panel_DatosEmpl.TabIndex = 1;
             // 
             // lbl_DatosEmpl
@@ -141,22 +142,22 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txt_NomEmpleado);
             this.panel2.Controls.Add(this.lbl_RazonSocial);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txt_RFC_Empleado);
             this.panel2.Controls.Add(this.lbl_RFC);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1099, 33);
+            this.panel2.Size = new System.Drawing.Size(1082, 33);
             this.panel2.TabIndex = 2;
             // 
-            // textBox2
+            // txt_NomEmpleado
             // 
-            this.textBox2.Location = new System.Drawing.Point(370, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 3;
+            this.txt_NomEmpleado.Location = new System.Drawing.Point(370, 6);
+            this.txt_NomEmpleado.Name = "txt_NomEmpleado";
+            this.txt_NomEmpleado.Size = new System.Drawing.Size(167, 20);
+            this.txt_NomEmpleado.TabIndex = 3;
             // 
             // lbl_RazonSocial
             // 
@@ -167,12 +168,12 @@
             this.lbl_RazonSocial.TabIndex = 2;
             this.lbl_RazonSocial.Text = "Razon Social";
             // 
-            // textBox1
+            // txt_RFC_Empleado
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 1;
+            this.txt_RFC_Empleado.Location = new System.Drawing.Point(87, 6);
+            this.txt_RFC_Empleado.Name = "txt_RFC_Empleado";
+            this.txt_RFC_Empleado.Size = new System.Drawing.Size(167, 20);
+            this.txt_RFC_Empleado.TabIndex = 1;
             // 
             // lbl_RFC
             // 
@@ -190,7 +191,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 145);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1099, 54);
+            this.panel3.Size = new System.Drawing.Size(1082, 54);
             this.panel3.TabIndex = 3;
             // 
             // lbl_Nomina
@@ -218,7 +219,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 199);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1099, 56);
+            this.panel4.Size = new System.Drawing.Size(1082, 56);
             this.panel4.TabIndex = 4;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -296,7 +297,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 255);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1099, 47);
+            this.panel5.Size = new System.Drawing.Size(1082, 47);
             this.panel5.TabIndex = 5;
             // 
             // label4
@@ -355,7 +356,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 302);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1099, 143);
+            this.panel6.Size = new System.Drawing.Size(1082, 143);
             this.panel6.TabIndex = 6;
             // 
             // cb_Percepciones
@@ -445,7 +446,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 445);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1099, 48);
+            this.panel7.Size = new System.Drawing.Size(1082, 48);
             this.panel7.TabIndex = 7;
             // 
             // label5
@@ -533,50 +534,8 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 493);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1099, 152);
+            this.panel8.Size = new System.Drawing.Size(1082, 152);
             this.panel8.TabIndex = 14;
-            // 
-            // cb_Deducciones
-            // 
-            this.cb_Deducciones.FormattingEnabled = true;
-            this.cb_Deducciones.Items.AddRange(new object[] {
-            "ISR",
-            "Faltas"});
-            this.cb_Deducciones.Location = new System.Drawing.Point(48, 6);
-            this.cb_Deducciones.Name = "cb_Deducciones";
-            this.cb_Deducciones.Size = new System.Drawing.Size(171, 21);
-            this.cb_Deducciones.TabIndex = 17;
-            // 
-            // btn_AgregarDed
-            // 
-            this.btn_AgregarDed.Location = new System.Drawing.Point(947, 4);
-            this.btn_AgregarDed.Name = "btn_AgregarDed";
-            this.btn_AgregarDed.Size = new System.Drawing.Size(93, 23);
-            this.btn_AgregarDed.TabIndex = 16;
-            this.btn_AgregarDed.Text = "Agregar";
-            this.btn_AgregarDed.UseVisualStyleBackColor = true;
-            this.btn_AgregarDed.Click += new System.EventHandler(this.btn_AgregarDed_Click);
-            // 
-            // txt_importeDed
-            // 
-            this.txt_importeDed.Location = new System.Drawing.Point(788, 6);
-            this.txt_importeDed.Name = "txt_importeDed";
-            this.txt_importeDed.Size = new System.Drawing.Size(120, 20);
-            this.txt_importeDed.TabIndex = 15;
-            // 
-            // txt_DescDed
-            // 
-            this.txt_DescDed.Location = new System.Drawing.Point(370, 6);
-            this.txt_DescDed.Name = "txt_DescDed";
-            this.txt_DescDed.Size = new System.Drawing.Size(378, 20);
-            this.txt_DescDed.TabIndex = 14;
-            // 
-            // txt_ClaveDed
-            // 
-            this.txt_ClaveDed.Location = new System.Drawing.Point(243, 7);
-            this.txt_ClaveDed.Name = "txt_ClaveDed";
-            this.txt_ClaveDed.Size = new System.Drawing.Size(105, 20);
-            this.txt_ClaveDed.TabIndex = 13;
             // 
             // dataGV_Deducciones
             // 
@@ -611,12 +570,63 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // cb_Deducciones
+            // 
+            this.cb_Deducciones.FormattingEnabled = true;
+            this.cb_Deducciones.Items.AddRange(new object[] {
+            "ISR",
+            "Faltas"});
+            this.cb_Deducciones.Location = new System.Drawing.Point(48, 6);
+            this.cb_Deducciones.Name = "cb_Deducciones";
+            this.cb_Deducciones.Size = new System.Drawing.Size(171, 21);
+            this.cb_Deducciones.TabIndex = 17;
+            // 
+            // btn_AgregarDed
+            // 
+            this.btn_AgregarDed.Location = new System.Drawing.Point(947, 4);
+            this.btn_AgregarDed.Name = "btn_AgregarDed";
+            this.btn_AgregarDed.Size = new System.Drawing.Size(93, 23);
+            this.btn_AgregarDed.TabIndex = 16;
+            this.btn_AgregarDed.Text = "Agregar";
+            this.btn_AgregarDed.UseVisualStyleBackColor = true;
+            this.btn_AgregarDed.Click += new System.EventHandler(this.btn_AgregarDed_Click);
+            // 
+            // txt_ClaveDed
+            // 
+            this.txt_ClaveDed.Location = new System.Drawing.Point(243, 7);
+            this.txt_ClaveDed.Name = "txt_ClaveDed";
+            this.txt_ClaveDed.Size = new System.Drawing.Size(105, 20);
+            this.txt_ClaveDed.TabIndex = 13;
+            // 
+            // txt_importeDed
+            // 
+            this.txt_importeDed.Location = new System.Drawing.Point(788, 6);
+            this.txt_importeDed.Name = "txt_importeDed";
+            this.txt_importeDed.Size = new System.Drawing.Size(120, 20);
+            this.txt_importeDed.TabIndex = 15;
+            // 
+            // txt_DescDed
+            // 
+            this.txt_DescDed.Location = new System.Drawing.Point(370, 6);
+            this.txt_DescDed.Name = "txt_DescDed";
+            this.txt_DescDed.Size = new System.Drawing.Size(378, 20);
+            this.txt_DescDed.TabIndex = 14;
+            // 
+            // lb_Montos
+            // 
+            this.lb_Montos.FormattingEnabled = true;
+            this.lb_Montos.Location = new System.Drawing.Point(159, 680);
+            this.lb_Montos.Name = "lb_Montos";
+            this.lb_Montos.Size = new System.Drawing.Size(120, 95);
+            this.lb_Montos.TabIndex = 15;
+            // 
             // Form_Timbra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1099, 750);
+            this.ClientSize = new System.Drawing.Size(1099, 693);
+            this.Controls.Add(this.lb_Montos);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.lbl_motno);
             this.Controls.Add(this.lbl_concepto);
@@ -661,9 +671,9 @@
         private System.Windows.Forms.Panel Panel_DatosEmpl;
         private System.Windows.Forms.Label lbl_DatosEmpl;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_NomEmpleado;
         private System.Windows.Forms.Label lbl_RazonSocial;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_RFC_Empleado;
         private System.Windows.Forms.Label lbl_RFC;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_Nomina;
@@ -712,5 +722,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ListBox lb_Montos;
     }
 }
