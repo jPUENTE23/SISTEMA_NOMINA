@@ -95,6 +95,7 @@ namespace SISTEMA_NOMINA
             //MOSTRARA LAS EMPRESAS ASIGNADAS DE ACUERDO AL USUARIO SELECCIONADO
             //-----------------------------------------------------------------------------------------
             BD.ConexionSQL.Usuarios ConnUsuarios = new BD.ConexionSQL.Usuarios();
+            BD.ConexionSQL.Conexion ClsoeConn = new BD.ConexionSQL.Conexion();
             int indexDuUsuario = cb_Usuarios.SelectedIndex;
             string nomDuUsuario = cb_Usuarios.Items[indexDuUsuario].ToString();
             SqlDataReader DU_Id_Usuario = ConnUsuarios.ID_USUARIO(nomDuUsuario);
@@ -113,6 +114,7 @@ namespace SISTEMA_NOMINA
                 }
                 
             }
+            ClsoeConn.CerrarConexionnBD();
         }
 
         private void Form_AdministrarUsuario_BackgroundImageLayoutChanged(object sender, EventArgs e)

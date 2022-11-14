@@ -37,6 +37,7 @@ namespace SISTEMA_NOMINA
             /* Creamos las instancias para accede a las clases que utlizaremos */
             BD.ConexionSQL.Detalle_Usuario DU_Conn = new BD.ConexionSQL.Detalle_Usuario();
             BD.ConexionSQL.Usuarios Usuario_Conn = new BD.ConexionSQL.Usuarios();
+            BD.ConexionSQL.Conexion CloseConn = new BD.ConexionSQL.Conexion();
 
             /* Obtenemos el id del usuario con el que se ingreso */
             SqlDataReader Id_Usuario = Usuario_Conn.ID_USUARIO(UserSelect);
@@ -58,6 +59,7 @@ namespace SISTEMA_NOMINA
                     cb_EmpresasUsuarios.Items.Add(List_DU["Nom_Empresa"]);
                 }
             }
+            CloseConn.CerrarConexionnBD();
         }
 
 

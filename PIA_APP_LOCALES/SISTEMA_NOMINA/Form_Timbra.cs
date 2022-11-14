@@ -14,6 +14,8 @@ namespace SISTEMA_NOMINA
 {
     public partial class Form_Timbra : Form
     {
+
+
         dynamic Usuario_;
         dynamic Empresa_;
         List<ConceptosPercepciones> ListaPercepciones = new List<ConceptosPercepciones>();
@@ -24,6 +26,8 @@ namespace SISTEMA_NOMINA
             InitializeComponent();
             this.Usuario_ = usuario;
             this.Empresa_ = empresa;
+
+            
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -68,6 +72,7 @@ namespace SISTEMA_NOMINA
             double calPer = 0;
             foreach (dynamic dato in ListaPercepciones)
             {
+                indexPercepciones = dataGV_Percepciones.Rows.Add();
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[0].Value = dato.ConceptoPercepcion;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[1].Value = dato.Clave;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[2].Value = dato.DescPercecepcion;
@@ -96,13 +101,17 @@ namespace SISTEMA_NOMINA
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            /* instancias de conexion */
             BD.ConexionSQL.Timbra ConnTimbra = new BD.ConexionSQL.Timbra();
             BD.ConexionSQL.Empresa ConnEmpresa = new BD.ConexionSQL.Empresa();
+            BD.ConexionSQL.Conexion CloseConn = new BD.ConexionSQL.Conexion();
             /* Obetemos las percepciones y deducciones ingresadas */
             List<ConceptosPercepciones> datosPercepciones = ListaPercepciones;
             List<ConceptosDeducciones> datosDeducciones = ListaDeducciones;
             List<ConceptosOtrosPagos> datosOtrosPagos = ListaOtrosPagos;
 
+
+            /* Guardamos los datos ingreasdos por el usuario */
             dynamic RFC_Empleado = txt_RFC_Empleado.Text;
             dynamic Nom_Empleado = txt_NomEmpleado.Text;
             DateTime FechaEmisiion = DateTime.Now;
@@ -136,15 +145,18 @@ namespace SISTEMA_NOMINA
             double TotalOtrosP = sumOtrosPagos;
             int idEmpresa = 0;
 
+            /* obtenemos el ID de la empresa emisara del recibo */
             SqlDataReader getIdEmpresa = ConnEmpresa.ID_Empresa(this.Empresa_);
 
             if (getIdEmpresa.Read())
             {
                 idEmpresa = Convert.ToInt16(getIdEmpresa["ID_Empresa"]);
             }
+            CloseConn.CerrarConexionnBD();
 
             double ImporteNeto = TotalPercepciones - TotalDeduccion + TotalOtrosP;
 
+            /* Guardamos los datos del recibo */
             SqlDataReader id_recibo = ConnTimbra.Gen_Recibo(
                 Nom_Empleado,
                 RFC_Empleado,
@@ -163,8 +175,46 @@ namespace SISTEMA_NOMINA
 
             if (id_recibo.Read())
             {
+                /* Extraemos el ID del redcibo emitido para relacionalo con sus coceptos */
                 idRecibo = Convert.ToInt16(id_recibo[0]);
+                CloseConn.CerrarConexionnBD();
+
             }
+
+            foreach (dynamic Per in datosPercepciones)
+            {
+                ConnTimbra.RelacionarConcepto(
+                    "Percepcion",
+                    Per.ConceptoPercepcion,
+                    Per.Clave,
+                    Per.DescPercecepcion,
+                    Per.Importe,
+                    idRecibo);
+            }
+
+            //foreach (dynamic Per in datosDeducciones)
+            //{
+            //    ConnTimbra.RelacionarConcepto(
+            //        TipoConDed,
+            //        Per.ConceptoDeduccion,
+            //        Per.Clave,
+            //        Per.DescDeduccion,
+            //        Per.Importe,
+            //        idRecibo);
+            //}
+
+            //foreach (dynamic Per in datosOtrosPagos)
+            //{
+            //    ConnTimbra.RelacionarConcepto(
+            //        TipoConOP,
+            //        Per.ConceptoDtrosPagos,
+            //        Per.ClaveOtrosPagos,
+            //        Per.DescOtrosPagos,
+            //        Per.ImporteOtrosPagos,
+            //        idRecibo);
+            //}
+
+            MessageBox.Show("El recibo se a emitido correctamente");
 
             lbl_motno.Text = Convert.ToString(idRecibo);
         }
@@ -198,6 +248,7 @@ namespace SISTEMA_NOMINA
             txt_ClaveDed.Text = "";
             txt_DescDed.Text = "";
             txt_importeDed.Text = "";
+
         }
 
 
@@ -235,6 +286,11 @@ namespace SISTEMA_NOMINA
             txt_ClaveOP.Clear();
             txt_DescOP.Clear();
             txt_ImporteOP.Clear();
+        }
+
+        private void Form_Timbra_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

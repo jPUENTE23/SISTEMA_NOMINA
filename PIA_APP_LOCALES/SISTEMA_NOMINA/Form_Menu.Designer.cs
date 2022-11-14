@@ -119,6 +119,7 @@
             this.btn_ExplorarRec.Text = "Explorar Recibos";
             this.btn_ExplorarRec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ExplorarRec.UseVisualStyleBackColor = false;
+            this.btn_ExplorarRec.Click += new System.EventHandler(this.btn_ExplorarRec_Click);
             // 
             // btn_Timbra
             // 

@@ -42,5 +42,12 @@ namespace SISTEMA_NOMINA
         {
 
         }
+
+        private void btn_ExplorarRec_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_ExplorarRecibos FormExplorarRecibos = new Form_ExplorarRecibos(this.ConectUser, this.ConectEmpresa);
+            FormExplorarRecibos.Show();
+        }
     }
 }

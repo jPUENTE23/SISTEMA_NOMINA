@@ -11,11 +11,12 @@ namespace SISTEMA_NOMINA.BD
 {
     internal class ConexionSQL
     {
-
+        
         public class Conexion
         {
             // CONEXION A SQL SERVER CON AUTENTICACION DE WINDOWS
             SqlConnection ConexionBD = new SqlConnection("server=DESKTOP-6JRCA2I ; database=DB_00_SISTEMA_NOMINA ; integrated security = true");
+            public bool IsConected = false;
             public SqlConnection AbrirConexioBD()
             {
                 //SqlConnection Conexion = new SqlConnection("server=DESKTOP-6JRCA2I ; database=DB_00_SISTEMA_NOMINA ; integrated security = true");
@@ -23,6 +24,8 @@ namespace SISTEMA_NOMINA.BD
                 try
                 {
                     AbrirConn.Open();
+                    IsConected = true;
+                    
                 }
                 catch (SqlException e)
                 {
@@ -37,6 +40,8 @@ namespace SISTEMA_NOMINA.BD
                 try
                 {
                     CerrarConn.Close();
+                    IsConected = false;
+                    
                 }
                 catch (SqlException e)
                 {
@@ -95,7 +100,6 @@ namespace SISTEMA_NOMINA.BD
                  datos que nos devuelva la consulta */
                 SqlDataReader ListadoEmpr = cmd.ExecuteReader();
 
-
                 /* Retornamos los daos que se hayan encontrado */
                 return ListadoEmpr;
 
@@ -113,7 +117,7 @@ namespace SISTEMA_NOMINA.BD
                 SqlDataReader id_empresa = cmd.ExecuteReader();
 
                 cmd.Parameters.Clear();
-
+               
                 return id_empresa;
 
             }
@@ -157,7 +161,7 @@ namespace SISTEMA_NOMINA.BD
 
                 /* Almacenamos los resultados obtenidos */
                 SqlDataReader Usuarios = cmd.ExecuteReader();
-
+                
                 return Usuarios;
             }
 
@@ -172,7 +176,7 @@ namespace SISTEMA_NOMINA.BD
                 SqlDataReader id_usuario = cmd.ExecuteReader();
 
                 cmd.Parameters.Clear();
-
+                
                 return id_usuario;
 
             }
@@ -200,7 +204,7 @@ namespace SISTEMA_NOMINA.BD
                 SqlDataReader valLogin = cmd.ExecuteReader();
 
                 cmd.Parameters.Clear();
-
+ 
                 return valLogin;
             }
         }
@@ -222,7 +226,7 @@ namespace SISTEMA_NOMINA.BD
                 cmd.ExecuteNonQuery();
 
                 cmd.Parameters.Clear();
-                DU_Conn.CerrarConexionnBD();
+                
             }
 
             public SqlDataReader Empresas_Usuarios(int DU_IdUsuario)
@@ -233,7 +237,7 @@ namespace SISTEMA_NOMINA.BD
 
                 cmd.Parameters.AddWithValue("@Id_Usuario", DU_IdUsuario);
                 SqlDataReader List_DU_IdUsuario = cmd.ExecuteReader();
-
+          
                 return List_DU_IdUsuario;
             }
 
@@ -278,6 +282,50 @@ namespace SISTEMA_NOMINA.BD
                 SqlDataReader Id_Recibo = cmd.ExecuteReader();
 
                 return Id_Recibo;
+            }
+
+            public void RelacionarConcepto (
+                string TipoConcepto,
+                dynamic NomConcepto,
+                int Clave,
+                dynamic DescConcepto,
+                double ImporteConcepto,
+                int Id_Recibo)
+            {
+                cmd.Connection = GenRec_Conn.AbrirConexioBD();
+                cmd.CommandText = "SP_RELACIONAR_CONCEPTO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@TipoConcepto", TipoConcepto);
+                cmd.Parameters.AddWithValue("@Nom_Concepto", NomConcepto);
+                cmd.Parameters.AddWithValue("@Clave", Clave);
+                cmd.Parameters.AddWithValue("@DescConcepto", DescConcepto);
+                cmd.Parameters.AddWithValue("@Importe", ImporteConcepto);
+                cmd.Parameters.AddWithValue("@Id_Recibo", Id_Recibo);
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.Clear();
+
+                GenRec_Conn.CerrarConexionnBD();
+            }
+        }
+
+        public class Recibos
+        {
+            private Conexion Conn = new Conexion();
+            SqlCommand cmd = new SqlCommand();
+
+            public SqlDataReader ExplorarRecibos(int IdEmpresa)
+            {
+                cmd.Connection = Conn.AbrirConexioBD();
+                cmd.CommandText = "SP_CONSULTAR_RECIBOS";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IdEmprsa", IdEmpresa);
+
+                SqlDataReader Recibos = cmd.ExecuteReader();
+
+                return Recibos;
             }
         }
     }

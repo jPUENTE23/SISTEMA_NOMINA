@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Regresar = new System.Windows.Forms.Button();
             this.Panel_DatosEmpl = new System.Windows.Forms.Panel();
@@ -103,13 +106,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_TotalOP = new System.Windows.Forms.Label();
             this.btn_Calcular = new System.Windows.Forms.Button();
             this.lbl_TotalPer = new System.Windows.Forms.Label();
             this.lbl_TotalDed = new System.Windows.Forms.Label();
-            this.lbl_ISR = new System.Windows.Forms.Label();
             this.lbl_TotalNeto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.Panel_DatosEmpl.SuspendLayout();
@@ -384,9 +385,10 @@
             this.panel6.Controls.Add(this.txt_DescPer);
             this.panel6.Controls.Add(this.txt_ClavePer);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(0, 302);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1112, 143);
+            this.panel6.Size = new System.Drawing.Size(1112, 151);
             this.panel6.TabIndex = 6;
             // 
             // cb_Percepciones
@@ -399,26 +401,32 @@
             "Caja de Ahorro"});
             this.cb_Percepciones.Location = new System.Drawing.Point(47, 8);
             this.cb_Percepciones.Name = "cb_Percepciones";
-            this.cb_Percepciones.Size = new System.Drawing.Size(171, 21);
+            this.cb_Percepciones.Size = new System.Drawing.Size(171, 23);
             this.cb_Percepciones.TabIndex = 6;
             // 
             // dataGV_Percepciones
             // 
+            this.dataGV_Percepciones.AllowDrop = true;
+            this.dataGV_Percepciones.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGV_Percepciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGV_Percepciones.CausesValidation = false;
             this.dataGV_Percepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV_Percepciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_Percepcion,
             this.col_ClavePer,
             this.col_DescripcionPer,
             this.col_ImportePer});
+            this.dataGV_Percepciones.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGV_Percepciones.Location = new System.Drawing.Point(47, 46);
             this.dataGV_Percepciones.Name = "dataGV_Percepciones";
-            this.dataGV_Percepciones.Size = new System.Drawing.Size(994, 75);
+            this.dataGV_Percepciones.Size = new System.Drawing.Size(993, 86);
             this.dataGV_Percepciones.TabIndex = 5;
             // 
             // col_Percepcion
             // 
             this.col_Percepcion.HeaderText = "Percepcion";
             this.col_Percepcion.Name = "col_Percepcion";
+            this.col_Percepcion.Width = 200;
             // 
             // col_ClavePer
             // 
@@ -429,11 +437,13 @@
             // 
             this.col_DescripcionPer.HeaderText = "Descripcion";
             this.col_DescripcionPer.Name = "col_DescripcionPer";
+            this.col_DescripcionPer.Width = 550;
             // 
             // col_ImportePer
             // 
             this.col_ImportePer.HeaderText = "Importe";
             this.col_ImportePer.Name = "col_ImportePer";
+            this.col_ImportePer.Width = 102;
             // 
             // btn_AgregarPer
             // 
@@ -449,21 +459,21 @@
             // 
             this.txt_ImportePer.Location = new System.Drawing.Point(786, 8);
             this.txt_ImportePer.Name = "txt_ImportePer";
-            this.txt_ImportePer.Size = new System.Drawing.Size(120, 20);
+            this.txt_ImportePer.Size = new System.Drawing.Size(120, 21);
             this.txt_ImportePer.TabIndex = 3;
             // 
             // txt_DescPer
             // 
             this.txt_DescPer.Location = new System.Drawing.Point(370, 8);
             this.txt_DescPer.Name = "txt_DescPer";
-            this.txt_DescPer.Size = new System.Drawing.Size(378, 20);
+            this.txt_DescPer.Size = new System.Drawing.Size(378, 21);
             this.txt_DescPer.TabIndex = 2;
             // 
             // txt_ClavePer
             // 
             this.txt_ClavePer.Location = new System.Drawing.Point(243, 8);
             this.txt_ClavePer.Name = "txt_ClavePer";
-            this.txt_ClavePer.Size = new System.Drawing.Size(105, 20);
+            this.txt_ClavePer.Size = new System.Drawing.Size(105, 21);
             this.txt_ClavePer.TabIndex = 1;
             // 
             // panel7
@@ -474,7 +484,7 @@
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 445);
+            this.panel7.Location = new System.Drawing.Point(0, 453);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1112, 48);
             this.panel7.TabIndex = 7;
@@ -527,9 +537,9 @@
             // 
             this.btn_agregar.AllowDrop = true;
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.Location = new System.Drawing.Point(457, 1001);
+            this.btn_agregar.Location = new System.Drawing.Point(850, 887);
             this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(235, 23);
+            this.btn_agregar.Size = new System.Drawing.Size(188, 44);
             this.btn_agregar.TabIndex = 8;
             this.btn_agregar.Text = "Generar Recibo";
             this.btn_agregar.UseVisualStyleBackColor = true;
@@ -538,7 +548,7 @@
             // lbl_concepto
             // 
             this.lbl_concepto.AutoSize = true;
-            this.lbl_concepto.Location = new System.Drawing.Point(131, 896);
+            this.lbl_concepto.Location = new System.Drawing.Point(815, 984);
             this.lbl_concepto.Name = "lbl_concepto";
             this.lbl_concepto.Size = new System.Drawing.Size(35, 13);
             this.lbl_concepto.TabIndex = 9;
@@ -547,7 +557,7 @@
             // lbl_motno
             // 
             this.lbl_motno.AutoSize = true;
-            this.lbl_motno.Location = new System.Drawing.Point(131, 868);
+            this.lbl_motno.Location = new System.Drawing.Point(815, 956);
             this.lbl_motno.Name = "lbl_motno";
             this.lbl_motno.Size = new System.Drawing.Size(41, 13);
             this.lbl_motno.TabIndex = 13;
@@ -563,28 +573,49 @@
             this.panel8.Controls.Add(this.txt_importeDed);
             this.panel8.Controls.Add(this.txt_DescDed);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 493);
+            this.panel8.Location = new System.Drawing.Point(0, 501);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1112, 152);
+            this.panel8.Size = new System.Drawing.Size(1112, 158);
             this.panel8.TabIndex = 14;
             // 
             // dataGV_Deducciones
             // 
+            this.dataGV_Deducciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGV_Deducciones.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGV_Deducciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV_Deducciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGV_Deducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV_Deducciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGV_Deducciones.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGV_Deducciones.GridColor = System.Drawing.SystemColors.Control;
             this.dataGV_Deducciones.Location = new System.Drawing.Point(48, 49);
             this.dataGV_Deducciones.Name = "dataGV_Deducciones";
-            this.dataGV_Deducciones.Size = new System.Drawing.Size(992, 75);
+            this.dataGV_Deducciones.Size = new System.Drawing.Size(992, 87);
             this.dataGV_Deducciones.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Percepcion";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 200;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -595,11 +626,13 @@
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Descripcion";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 550;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 102;
             // 
             // cb_Deducciones
             // 
@@ -646,7 +679,7 @@
             // lb_Montos
             // 
             this.lb_Montos.FormattingEnabled = true;
-            this.lb_Montos.Location = new System.Drawing.Point(151, 941);
+            this.lb_Montos.Location = new System.Drawing.Point(889, 947);
             this.lb_Montos.Name = "lb_Montos";
             this.lb_Montos.Size = new System.Drawing.Size(120, 95);
             this.lb_Montos.TabIndex = 15;
@@ -659,9 +692,9 @@
             this.panel9.Controls.Add(this.lbl_OP_Clave);
             this.panel9.Controls.Add(this.lbl_OP_Desc);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 645);
+            this.panel9.Location = new System.Drawing.Point(0, 659);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1112, 50);
+            this.panel9.Size = new System.Drawing.Size(1112, 48);
             this.panel9.TabIndex = 16;
             // 
             // lbl_OP_Importe
@@ -717,13 +750,22 @@
             this.panel10.Controls.Add(this.txt_ImporteOP);
             this.panel10.Controls.Add(this.txt_ClaveOP);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 695);
+            this.panel10.Location = new System.Drawing.Point(0, 707);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1112, 153);
+            this.panel10.Size = new System.Drawing.Size(1112, 157);
             this.panel10.TabIndex = 17;
             // 
             // dataGV_OtrosPagos
             // 
+            this.dataGV_OtrosPagos.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV_OtrosPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGV_OtrosPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGV_OtrosPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -732,13 +774,14 @@
             this.dataGridViewTextBoxColumn8});
             this.dataGV_OtrosPagos.Location = new System.Drawing.Point(48, 49);
             this.dataGV_OtrosPagos.Name = "dataGV_OtrosPagos";
-            this.dataGV_OtrosPagos.Size = new System.Drawing.Size(992, 75);
+            this.dataGV_OtrosPagos.Size = new System.Drawing.Size(993, 91);
             this.dataGV_OtrosPagos.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Percepcion";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 200;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -749,11 +792,13 @@
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "Descripcion";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 550;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "Importe";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 102;
             // 
             // cb_TipoOp
             // 
@@ -801,7 +846,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(370, 865);
+            this.label9.Location = new System.Drawing.Point(45, 887);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 16);
             this.label9.TabIndex = 18;
@@ -811,7 +856,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(370, 893);
+            this.label10.Location = new System.Drawing.Point(240, 887);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 19;
@@ -821,28 +866,17 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(370, 922);
+            this.label11.Location = new System.Drawing.Point(443, 887);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(137, 16);
             this.label11.TabIndex = 20;
             this.label11.Text = "Total Otros Pagos:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(373, 947);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 16);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "ISR:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(373, 975);
+            this.label13.Location = new System.Drawing.Point(652, 887);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 16);
             this.label13.TabIndex = 22;
@@ -852,17 +886,16 @@
             // lbl_TotalOP
             // 
             this.lbl_TotalOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalOP.Location = new System.Drawing.Point(654, 922);
+            this.lbl_TotalOP.Location = new System.Drawing.Point(443, 915);
             this.lbl_TotalOP.Name = "lbl_TotalOP";
-            this.lbl_TotalOP.Size = new System.Drawing.Size(38, 16);
+            this.lbl_TotalOP.Size = new System.Drawing.Size(154, 16);
             this.lbl_TotalOP.TabIndex = 25;
             this.lbl_TotalOP.Text = "$-";
-            this.lbl_TotalOP.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btn_Calcular
             // 
             this.btn_Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Calcular.Location = new System.Drawing.Point(376, 1001);
+            this.btn_Calcular.Location = new System.Drawing.Point(580, 974);
             this.btn_Calcular.Name = "btn_Calcular";
             this.btn_Calcular.Size = new System.Drawing.Size(75, 23);
             this.btn_Calcular.TabIndex = 28;
@@ -872,42 +905,29 @@
             // lbl_TotalPer
             // 
             this.lbl_TotalPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalPer.Location = new System.Drawing.Point(654, 866);
+            this.lbl_TotalPer.Location = new System.Drawing.Point(45, 915);
             this.lbl_TotalPer.Name = "lbl_TotalPer";
-            this.lbl_TotalPer.Size = new System.Drawing.Size(38, 16);
+            this.lbl_TotalPer.Size = new System.Drawing.Size(160, 15);
             this.lbl_TotalPer.TabIndex = 30;
             this.lbl_TotalPer.Text = "$-";
-            this.lbl_TotalPer.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lbl_TotalDed
             // 
             this.lbl_TotalDed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalDed.Location = new System.Drawing.Point(654, 893);
+            this.lbl_TotalDed.Location = new System.Drawing.Point(243, 915);
             this.lbl_TotalDed.Name = "lbl_TotalDed";
-            this.lbl_TotalDed.Size = new System.Drawing.Size(38, 16);
+            this.lbl_TotalDed.Size = new System.Drawing.Size(157, 16);
             this.lbl_TotalDed.TabIndex = 31;
             this.lbl_TotalDed.Text = "$-";
-            this.lbl_TotalDed.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lbl_ISR
-            // 
-            this.lbl_ISR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ISR.Location = new System.Drawing.Point(654, 947);
-            this.lbl_ISR.Name = "lbl_ISR";
-            this.lbl_ISR.Size = new System.Drawing.Size(38, 16);
-            this.lbl_ISR.TabIndex = 32;
-            this.lbl_ISR.Text = "$-";
-            this.lbl_ISR.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lbl_TotalNeto
             // 
             this.lbl_TotalNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalNeto.Location = new System.Drawing.Point(654, 975);
+            this.lbl_TotalNeto.Location = new System.Drawing.Point(652, 915);
             this.lbl_TotalNeto.Name = "lbl_TotalNeto";
-            this.lbl_TotalNeto.Size = new System.Drawing.Size(38, 16);
+            this.lbl_TotalNeto.Size = new System.Drawing.Size(119, 16);
             this.lbl_TotalNeto.TabIndex = 33;
             this.lbl_TotalNeto.Text = "$-";
-            this.lbl_TotalNeto.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // Form_Timbra
             // 
@@ -916,13 +936,11 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1129, 649);
             this.Controls.Add(this.lbl_TotalNeto);
-            this.Controls.Add(this.lbl_ISR);
             this.Controls.Add(this.lbl_TotalDed);
             this.Controls.Add(this.lbl_TotalPer);
             this.Controls.Add(this.btn_Calcular);
             this.Controls.Add(this.lbl_TotalOP);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -943,6 +961,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form_Timbra";
             this.Text = "Form_Timbra";
+            this.Load += new System.EventHandler(this.Form_Timbra_Load);
             this.panel1.ResumeLayout(false);
             this.Panel_DatosEmpl.ResumeLayout(false);
             this.Panel_DatosEmpl.PerformLayout();
@@ -1005,10 +1024,6 @@
         private System.Windows.Forms.TextBox txt_DescPer;
         private System.Windows.Forms.TextBox txt_ClavePer;
         private System.Windows.Forms.Button btn_Regresar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ClavePer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_DescripcionPer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ImportePer;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -1025,10 +1040,6 @@
         private System.Windows.Forms.TextBox txt_importeDed;
         private System.Windows.Forms.TextBox txt_DescDed;
         private System.Windows.Forms.DataGridView dataGV_Deducciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.ListBox lb_Montos;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lbl_OP_Importe;
@@ -1037,10 +1048,6 @@
         private System.Windows.Forms.Label lbl_OP_Desc;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView dataGV_OtrosPagos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.ComboBox cb_TipoOp;
         private System.Windows.Forms.TextBox txt_DescOP;
         private System.Windows.Forms.Button btn_AgregarOP;
@@ -1049,13 +1056,23 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbl_TotalOP;
         private System.Windows.Forms.Button btn_Calcular;
         private System.Windows.Forms.Label lbl_TotalPer;
         private System.Windows.Forms.Label lbl_TotalDed;
-        private System.Windows.Forms.Label lbl_ISR;
         private System.Windows.Forms.Label lbl_TotalNeto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Percepcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ClavePer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_DescripcionPer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ImportePer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }
