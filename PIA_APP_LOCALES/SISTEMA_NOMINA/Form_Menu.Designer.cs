@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panael_LeftMenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_SalirDeEmpresa = new System.Windows.Forms.Button();
@@ -41,10 +43,17 @@
             this.lbl_NomEmpresa = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_User = new System.Windows.Forms.Label();
+            this.dataGV_RecibosMenu = new System.Windows.Forms.DataGridView();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_RFCEmpl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_NomEmpl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_FecEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.Panael_LeftMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Panel_MenuOpciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGV_RecibosMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // Panael_LeftMenu
@@ -56,14 +65,14 @@
             this.Panael_LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panael_LeftMenu.Location = new System.Drawing.Point(0, 0);
             this.Panael_LeftMenu.Name = "Panael_LeftMenu";
-            this.Panael_LeftMenu.Size = new System.Drawing.Size(200, 552);
+            this.Panael_LeftMenu.Size = new System.Drawing.Size(200, 549);
             this.Panael_LeftMenu.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btn_SalirDeEmpresa);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 495);
+            this.panel2.Location = new System.Drawing.Point(0, 498);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 56);
             this.panel2.TabIndex = 3;
@@ -90,7 +99,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 335);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 160);
+            this.panel1.Size = new System.Drawing.Size(200, 163);
             this.panel1.TabIndex = 2;
             // 
             // Panel_MenuOpciones
@@ -196,21 +205,92 @@
             this.lbl_User.Text = "(Nombre dell Usuario)";
             this.lbl_User.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dataGV_RecibosMenu
+            // 
+            this.dataGV_RecibosMenu.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGV_RecibosMenu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGV_RecibosMenu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV_RecibosMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGV_RecibosMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGV_RecibosMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id,
+            this.col_RFCEmpl,
+            this.col_NomEmpl,
+            this.col_FecEmision});
+            this.dataGV_RecibosMenu.GridColor = System.Drawing.SystemColors.Window;
+            this.dataGV_RecibosMenu.Location = new System.Drawing.Point(238, 215);
+            this.dataGV_RecibosMenu.Name = "dataGV_RecibosMenu";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV_RecibosMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGV_RecibosMenu.Size = new System.Drawing.Size(690, 306);
+            this.dataGV_RecibosMenu.TabIndex = 7;
+            // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "ID";
+            this.col_id.Name = "col_id";
+            // 
+            // col_RFCEmpl
+            // 
+            this.col_RFCEmpl.HeaderText = "RFC ";
+            this.col_RFCEmpl.Name = "col_RFCEmpl";
+            this.col_RFCEmpl.Width = 150;
+            // 
+            // col_NomEmpl
+            // 
+            this.col_NomEmpl.HeaderText = "NOMBRE DEL EMPLEADO";
+            this.col_NomEmpl.Name = "col_NomEmpl";
+            this.col_NomEmpl.Width = 200;
+            // 
+            // col_FecEmision
+            // 
+            this.col_FecEmision.HeaderText = "FECHA EMISION";
+            this.col_FecEmision.Name = "col_FecEmision";
+            this.col_FecEmision.Width = 200;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label1.Location = new System.Drawing.Point(232, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(331, 32);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Ultimos Recibos Emitidos";
+            // 
             // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 552);
+            this.ClientSize = new System.Drawing.Size(969, 549);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGV_RecibosMenu);
             this.Controls.Add(this.lbl_User);
             this.Controls.Add(this.lbl_NomEmpresa);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Panael_LeftMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Menu";
             this.Text = "Form_Menu";
             this.Panael_LeftMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.Panel_MenuOpciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGV_RecibosMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +310,11 @@
         public System.Windows.Forms.Label lbl_NomEmpresa;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label lbl_User;
+        private System.Windows.Forms.DataGridView dataGV_RecibosMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_RFCEmpl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_NomEmpl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_FecEmision;
+        public System.Windows.Forms.Label label1;
     }
 }

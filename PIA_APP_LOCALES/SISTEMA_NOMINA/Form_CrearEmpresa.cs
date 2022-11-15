@@ -20,24 +20,45 @@ namespace SISTEMA_NOMINA
         private void btn_GenerarEmpr_Click(object sender, EventArgs e)
         {
             BD.ConexionSQL.Empresa CrearEmpresa = new BD.ConexionSQL.Empresa();
-
-            dynamic NombreEmpresa = txt_NomEmpresa.Text;
-            dynamic RFC_Empresa = txt_RFCEmpr.Text;
-
-            try
+            if (String.IsNullOrEmpty(txt_RFCEmpr.Text) | String.IsNullOrEmpty(txt_NomEmpresa.Text))
             {
-                CrearEmpresa.InsertarEmopresa(NombreEmpresa, RFC_Empresa);
-                MessageBox.Show("La Empresa se a creado correctamente");
+                MessageBox.Show("Es necesario que ingrese el RFC y Nombre de la empresa para poder crearla");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al generar la empresa " + ex.ToString());
-            }
+                dynamic NombreEmpresa = txt_NomEmpresa.Text;
+                dynamic RFC_Empresa = txt_RFCEmpr.Text;
 
-            txt_NomEmpresa.Text = "";
-            txt_RFCEmpr.Text = "";
-            NombreEmpresa = "";
-            RFC_Empresa = "";
+                try
+                {
+                    CrearEmpresa.InsertarEmopresa(NombreEmpresa, RFC_Empresa);
+                    MessageBox.Show("La Empresa se a creado correctamente");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al generar la empresa " + ex.ToString());
+                }
+
+                txt_NomEmpresa.Text = "";
+                txt_RFCEmpr.Text = "";
+                NombreEmpresa = "";
+                RFC_Empresa = "";
+            }
+            
+        }
+
+        private void Form_CrearEmpresa_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            //Form_EmpresasCreadas FormEmpresasCreadas = new Form_EmpresasCreadas();
+            //FormEmpresasCreadas.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_EmpresasCreadas FormEmpresasCreadas = new Form_EmpresasCreadas();
+            FormEmpresasCreadas.Show();
         }
     }
 }

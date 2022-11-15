@@ -31,6 +31,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ExplorarRecibos));
             this.dataGV_ExplorearRec = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_Explorar = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_RFC = new System.Windows.Forms.TextBox();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.col_id_ercibo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RFC_Empl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_NomEmpl = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,13 +51,6 @@
             this.COL_OtrosP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_RFCEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_Explorar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_ExplorearRec)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,7 +68,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ScrollBar;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGV_ExplorearRec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGV_ExplorearRec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -92,73 +92,6 @@
             this.dataGV_ExplorearRec.Size = new System.Drawing.Size(1151, 411);
             this.dataGV_ExplorearRec.TabIndex = 0;
             this.dataGV_ExplorearRec.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGV_ExplorearRec_CellContentClick);
-            // 
-            // col_id_ercibo
-            // 
-            this.col_id_ercibo.HeaderText = "ID RECIBO";
-            this.col_id_ercibo.Name = "col_id_ercibo";
-            // 
-            // col_RFC_Empl
-            // 
-            this.col_RFC_Empl.HeaderText = "RFC EMPLADO";
-            this.col_RFC_Empl.Name = "col_RFC_Empl";
-            this.col_RFC_Empl.Width = 150;
-            // 
-            // col_NomEmpl
-            // 
-            this.col_NomEmpl.HeaderText = "NOMBRE EMPLEADO";
-            this.col_NomEmpl.Name = "col_NomEmpl";
-            this.col_NomEmpl.Width = 400;
-            // 
-            // col_FecEmision
-            // 
-            this.col_FecEmision.HeaderText = "FECHA EMISION";
-            this.col_FecEmision.Name = "col_FecEmision";
-            // 
-            // col_FecPago
-            // 
-            this.col_FecPago.HeaderText = "FECHA PAGO";
-            this.col_FecPago.Name = "col_FecPago";
-            // 
-            // col_FecInicial
-            // 
-            this.col_FecInicial.HeaderText = "FECHA INICIAL PAGO";
-            this.col_FecInicial.Name = "col_FecInicial";
-            // 
-            // col_FecFinal
-            // 
-            this.col_FecFinal.HeaderText = "FECHA FINAL PAGO";
-            this.col_FecFinal.Name = "col_FecFinal";
-            // 
-            // col_DiasPagados
-            // 
-            this.col_DiasPagados.HeaderText = "DIAS PAGADOS";
-            this.col_DiasPagados.Name = "col_DiasPagados";
-            // 
-            // col_Percepciones
-            // 
-            this.col_Percepciones.HeaderText = "PERCEPCIONES";
-            this.col_Percepciones.Name = "col_Percepciones";
-            // 
-            // col_Deducciones
-            // 
-            this.col_Deducciones.HeaderText = "DEDUCCIONES";
-            this.col_Deducciones.Name = "col_Deducciones";
-            // 
-            // COL_OtrosP
-            // 
-            this.COL_OtrosP.HeaderText = "OTROS PAGOS";
-            this.COL_OtrosP.Name = "COL_OtrosP";
-            // 
-            // col_Neto
-            // 
-            this.col_Neto.HeaderText = "NETO";
-            this.col_Neto.Name = "col_Neto";
-            // 
-            // col_RFCEmpresa
-            // 
-            this.col_RFCEmpresa.HeaderText = "RFC EMPRESA";
-            this.col_RFCEmpresa.Name = "col_RFCEmpresa";
             // 
             // panel1
             // 
@@ -201,12 +134,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "RFC Empleado";
             // 
-            // textBox1
+            // txt_RFC
             // 
-            this.textBox1.Location = new System.Drawing.Point(248, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 5;
+            this.txt_RFC.Location = new System.Drawing.Point(248, 102);
+            this.txt_RFC.Name = "txt_RFC";
+            this.txt_RFC.Size = new System.Drawing.Size(210, 20);
+            this.txt_RFC.TabIndex = 5;
             // 
             // btn_Buscar
             // 
@@ -217,6 +150,7 @@
             this.btn_Buscar.TabIndex = 6;
             this.btn_Buscar.Text = "Buscar";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // pictureBox2
             // 
@@ -229,6 +163,80 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // col_id_ercibo
+            // 
+            this.col_id_ercibo.HeaderText = "ID RECIBO";
+            this.col_id_ercibo.Name = "col_id_ercibo";
+            // 
+            // col_RFC_Empl
+            // 
+            this.col_RFC_Empl.HeaderText = "RFC EMPLADO";
+            this.col_RFC_Empl.Name = "col_RFC_Empl";
+            this.col_RFC_Empl.Width = 150;
+            // 
+            // col_NomEmpl
+            // 
+            this.col_NomEmpl.HeaderText = "NOMBRE EMPLEADO";
+            this.col_NomEmpl.Name = "col_NomEmpl";
+            this.col_NomEmpl.Width = 250;
+            // 
+            // col_FecEmision
+            // 
+            this.col_FecEmision.HeaderText = "FECHA EMISION";
+            this.col_FecEmision.Name = "col_FecEmision";
+            this.col_FecEmision.Width = 250;
+            // 
+            // col_FecPago
+            // 
+            this.col_FecPago.HeaderText = "FECHA PAGO";
+            this.col_FecPago.Name = "col_FecPago";
+            this.col_FecPago.Width = 250;
+            // 
+            // col_FecInicial
+            // 
+            this.col_FecInicial.HeaderText = "FECHA INICIAL PAGO";
+            this.col_FecInicial.Name = "col_FecInicial";
+            this.col_FecInicial.Width = 250;
+            // 
+            // col_FecFinal
+            // 
+            this.col_FecFinal.HeaderText = "FECHA FINAL PAGO";
+            this.col_FecFinal.Name = "col_FecFinal";
+            this.col_FecFinal.Width = 250;
+            // 
+            // col_DiasPagados
+            // 
+            this.col_DiasPagados.HeaderText = "DIAS PAGADOS";
+            this.col_DiasPagados.Name = "col_DiasPagados";
+            // 
+            // col_Percepciones
+            // 
+            this.col_Percepciones.HeaderText = "PERCEPCIONES";
+            this.col_Percepciones.Name = "col_Percepciones";
+            this.col_Percepciones.Width = 200;
+            // 
+            // col_Deducciones
+            // 
+            this.col_Deducciones.HeaderText = "DEDUCCIONES";
+            this.col_Deducciones.Name = "col_Deducciones";
+            this.col_Deducciones.Width = 200;
+            // 
+            // COL_OtrosP
+            // 
+            this.COL_OtrosP.HeaderText = "OTROS PAGOS";
+            this.COL_OtrosP.Name = "COL_OtrosP";
+            this.COL_OtrosP.Width = 200;
+            // 
+            // col_Neto
+            // 
+            this.col_Neto.HeaderText = "NETO";
+            this.col_Neto.Name = "col_Neto";
+            // 
+            // col_RFCEmpresa
+            // 
+            this.col_RFCEmpresa.HeaderText = "RFC EMPRESA";
+            this.col_RFCEmpresa.Name = "col_RFCEmpresa";
+            // 
             // Form_ExplorarRecibos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,7 +245,7 @@
             this.ClientSize = new System.Drawing.Size(1151, 574);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btn_Buscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_RFC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_Explorar);
             this.Controls.Add(this.pictureBox1);
@@ -257,6 +265,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGV_ExplorearRec;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_Explorar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_RFC;
+        private System.Windows.Forms.Button btn_Buscar;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_ercibo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_RFC_Empl;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_NomEmpl;
@@ -270,12 +285,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COL_OtrosP;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Neto;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_RFCEmpresa;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbl_Explorar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

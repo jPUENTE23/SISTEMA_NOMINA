@@ -18,15 +18,21 @@ namespace SISTEMA_NOMINA
 
         dynamic Usuario_;
         dynamic Empresa_;
+        int idEmpresa_;
         List<ConceptosPercepciones> ListaPercepciones = new List<ConceptosPercepciones>();
         List<ConceptosDeducciones> ListaDeducciones = new List<ConceptosDeducciones>();
         List<ConceptosOtrosPagos> ListaOtrosPagos = new List<ConceptosOtrosPagos>();
-        public Form_Timbra(dynamic usuario, dynamic empresa)
+        double Percepciones;
+        double Deducciones;
+        double OtrosPagos;
+        double Neto;
+        public Form_Timbra(dynamic usuario, dynamic empresa, int idEmpresa)
         {
             InitializeComponent();
             this.Usuario_ = usuario;
             this.Empresa_ = empresa;
-
+            this.idEmpresa_ = idEmpresa;
+            lbl_NomEmpresa.Text = this.Empresa_;
             
         }
 
@@ -38,7 +44,7 @@ namespace SISTEMA_NOMINA
         private void btn_Regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_Menu FormMenu = new Form_Menu(this.Usuario_, this.Empresa_);
+            Form_Menu FormMenu = new Form_Menu(this.Usuario_, this.Empresa_, this.idEmpresa_);
             FormMenu.lbl_User.Text = this.Usuario_;
             FormMenu.lbl_NomEmpresa.Text = this.Empresa_;
             FormMenu.Show();
@@ -72,7 +78,6 @@ namespace SISTEMA_NOMINA
             double calPer = 0;
             foreach (dynamic dato in ListaPercepciones)
             {
-                indexPercepciones = dataGV_Percepciones.Rows.Add();
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[0].Value = dato.ConceptoPercepcion;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[1].Value = dato.Clave;
                 dataGV_Percepciones.Rows[indexPercepciones].Cells[2].Value = dato.DescPercecepcion;
@@ -80,6 +85,9 @@ namespace SISTEMA_NOMINA
                 calPer += dato.Importe;
             }
             lbl_TotalPer.Text = "$" + Convert.ToString(calPer);
+            Percepciones = calPer;
+            Neto = Percepciones - Deducciones + OtrosPagos;
+            lbl_TotalNeto.Text = "$" + Convert.ToString(Neto);
 
             txt_ClavePer.Text = "";
             txt_DescPer.Text = "";
@@ -122,7 +130,7 @@ namespace SISTEMA_NOMINA
             double sumPerceppciones = 0;
             double sumDeduccion = 0;
             double sumOtrosPagos = 0;
-            
+
             /* Calculo de las perciones*/
             foreach (dynamic percepcion in datosPercepciones)
             {
@@ -177,13 +185,15 @@ namespace SISTEMA_NOMINA
             {
                 /* Extraemos el ID del redcibo emitido para relacionalo con sus coceptos */
                 idRecibo = Convert.ToInt16(id_recibo[0]);
-                CloseConn.CerrarConexionnBD();
+                getIdEmpresa.Close();
 
             }
 
+            BD.ConexionSQL.Concepto ConnConceptos = new BD.ConexionSQL.Concepto();
+
             foreach (dynamic Per in datosPercepciones)
             {
-                ConnTimbra.RelacionarConcepto(
+                ConnConceptos.RelacionarConcepto(
                     "Percepcion",
                     Per.ConceptoPercepcion,
                     Per.Clave,
@@ -192,31 +202,41 @@ namespace SISTEMA_NOMINA
                     idRecibo);
             }
 
-            //foreach (dynamic Per in datosDeducciones)
-            //{
-            //    ConnTimbra.RelacionarConcepto(
-            //        TipoConDed,
-            //        Per.ConceptoDeduccion,
-            //        Per.Clave,
-            //        Per.DescDeduccion,
-            //        Per.Importe,
-            //        idRecibo);
-            //}
+            foreach (dynamic ded in datosDeducciones)
+            {
+                ConnConceptos.RelacionarConcepto(
+                    "Deduccion",
+                    ded.ConceptoDeduccion,
+                    ded.Clave,
+                    ded.DescDeduccion,
+                    ded.Importe,
+                    idRecibo);
+            }
 
-            //foreach (dynamic Per in datosOtrosPagos)
-            //{
-            //    ConnTimbra.RelacionarConcepto(
-            //        TipoConOP,
-            //        Per.ConceptoDtrosPagos,
-            //        Per.ClaveOtrosPagos,
-            //        Per.DescOtrosPagos,
-            //        Per.ImporteOtrosPagos,
-            //        idRecibo);
-            //}
+            foreach (dynamic op in datosOtrosPagos)
+            {
+                ConnConceptos.RelacionarConcepto(
+                    "OtrosPagos",
+                    op.ConceptoDtrosPagos,
+                    op.ClaveOtrosPagos,
+                    op.DescOtrosPagos,
+                    op.ImporteOtrosPagos,
+                    idRecibo);
+            }
 
             MessageBox.Show("El recibo se a emitido correctamente");
 
-            lbl_motno.Text = Convert.ToString(idRecibo);
+            dataGV_Percepciones.Rows.Clear();
+            dataGV_Deducciones.Rows.Clear();
+            dataGV_OtrosPagos.Rows.Clear();
+            txt_NomEmpleado.Clear();
+            txt_RFC_Empleado.Clear();
+            txt_DiasPagados.Clear();
+            lbl_TotalDed.Text = "";
+            lbl_TotalPer.Text = "";
+            lbl_TotalOP.Text = "";
+            lbl_TotalNeto.Text = "";
+
         }
 
         private void btn_AgregarDed_Click(object sender, EventArgs e)
@@ -243,6 +263,9 @@ namespace SISTEMA_NOMINA
 
             }
             lbl_TotalDed.Text = "$" + Convert.ToString(calDed);
+            Deducciones = calDed;
+            Neto = Percepciones - Deducciones + OtrosPagos;
+            lbl_TotalNeto.Text = "$" + Convert.ToString(Neto);
 
 
             txt_ClaveDed.Text = "";
@@ -282,6 +305,9 @@ namespace SISTEMA_NOMINA
                 calOtrosP += otrosP.ImporteOtrosPagos;
             }
             lbl_TotalOP.Text = "$" + Convert.ToString(calOtrosP);
+            OtrosPagos = calOtrosP;
+            Neto = Percepciones - Deducciones + OtrosPagos;
+            lbl_TotalNeto.Text = "$" + Convert.ToString(Neto);
 
             txt_ClaveOP.Clear();
             txt_DescOP.Clear();
@@ -291,6 +317,22 @@ namespace SISTEMA_NOMINA
         private void Form_Timbra_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Menu FormMenu = new Form_Menu(this.Usuario_, this.Empresa_, this.idEmpresa_);
+            FormMenu.lbl_NomEmpresa.Text = this.Empresa_;
+            FormMenu.Show();
+        }
+
+        private void pictureBox_SalirMenu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Menu FormMenu = new Form_Menu(this.Usuario_, this.Empresa_, this.idEmpresa_);
+            FormMenu.lbl_NomEmpresa.Text = this.Empresa_;
+            FormMenu.Show();
         }
     }
 }

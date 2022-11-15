@@ -42,9 +42,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_salirApp = new System.Windows.Forms.Button();
+            this.pictureBox_Exit = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Usuario
@@ -102,7 +103,7 @@
             this.btn_CrearEmpr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearEmpr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearEmpr.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearEmpr.Location = new System.Drawing.Point(735, 311);
+            this.btn_CrearEmpr.Location = new System.Drawing.Point(735, 297);
             this.btn_CrearEmpr.Name = "btn_CrearEmpr";
             this.btn_CrearEmpr.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearEmpr.TabIndex = 6;
@@ -116,7 +117,7 @@
             this.btn_CrearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CrearUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CrearUsuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_CrearUsuario.Location = new System.Drawing.Point(735, 269);
+            this.btn_CrearUsuario.Location = new System.Drawing.Point(735, 255);
             this.btn_CrearUsuario.Name = "btn_CrearUsuario";
             this.btn_CrearUsuario.Size = new System.Drawing.Size(240, 36);
             this.btn_CrearUsuario.TabIndex = 7;
@@ -163,19 +164,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_salirApp
+            // pictureBox_Exit
             // 
-            this.btn_salirApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_salirApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_salirApp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_salirApp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_salirApp.Location = new System.Drawing.Point(735, 400);
-            this.btn_salirApp.Name = "btn_salirApp";
-            this.btn_salirApp.Size = new System.Drawing.Size(240, 36);
-            this.btn_salirApp.TabIndex = 11;
-            this.btn_salirApp.Text = "Salir";
-            this.btn_salirApp.UseVisualStyleBackColor = false;
-            this.btn_salirApp.Click += new System.EventHandler(this.btn_salirApp_Click);
+            this.pictureBox_Exit.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Exit.Image")));
+            this.pictureBox_Exit.Location = new System.Drawing.Point(832, 381);
+            this.pictureBox_Exit.Name = "pictureBox_Exit";
+            this.pictureBox_Exit.Size = new System.Drawing.Size(47, 50);
+            this.pictureBox_Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Exit.TabIndex = 12;
+            this.pictureBox_Exit.TabStop = false;
+            this.pictureBox_Exit.Click += new System.EventHandler(this.pictureBox_Exit_Click);
             // 
             // Form_Login
             // 
@@ -183,7 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1026, 493);
-            this.Controls.Add(this.btn_salirApp);
+            this.Controls.Add(this.pictureBox_Exit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_CrearUsuario);
@@ -199,6 +197,7 @@
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +217,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_salirApp;
+        private System.Windows.Forms.PictureBox pictureBox_Exit;
     }
 }
 

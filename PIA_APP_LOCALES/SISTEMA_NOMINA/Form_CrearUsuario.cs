@@ -56,5 +56,12 @@ namespace SISTEMA_NOMINA
                 MessageBox.Show("Las contrseñas ingresadas no coinciden. Favor de verificar");
             }
         }
+
+        private void pictureBox_RegUsuariosC_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_UsuariosCreados FormUsuarioCreados = new Form_UsuariosCreados();
+            FormUsuarioCreados.Show();
+        }
     }
 }

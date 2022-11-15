@@ -75,12 +75,29 @@ namespace SISTEMA_NOMINA
 
             int indexEmpresa = cb_EmpresasUsuarios.SelectedIndex;
             dynamic EmpresaSelect = cb_EmpresasUsuarios.Items[indexEmpresa].ToString();
+
+            BD.ConexionSQL.Empresa ConnEmpresa = new BD.ConexionSQL.Empresa();
+
+            SqlDataReader idEmpresa = ConnEmpresa.ID_Empresa(EmpresaSelect);
+
+            if (idEmpresa.Read())
+            {
+                int empresaId = Convert.ToInt16(idEmpresa["ID_Empresa"]);
+                this.Hide();
+                Form_Menu FormMenu = new Form_Menu(this._Usuario, EmpresaSelect, empresaId);
+                FormMenu.lbl_NomEmpresa.Text = EmpresaSelect;
+                FormMenu.lbl_User.Text = this._Usuario;
+                FormMenu.Show();
+            }
             
+            
+        }
+
+        private void pictureBox_RegLogin_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            Form_Menu FormMenu = new Form_Menu(this._Usuario, EmpresaSelect);
-            FormMenu.lbl_NomEmpresa.Text = EmpresaSelect;
-            FormMenu.lbl_User.Text = this._Usuario;
-            FormMenu.Show();
+            Form_Login FormLogin = new Form_Login();
+            FormLogin.Show();
         }
     }
 }

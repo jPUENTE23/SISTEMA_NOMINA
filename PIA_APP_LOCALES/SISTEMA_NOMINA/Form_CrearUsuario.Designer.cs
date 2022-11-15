@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_CrearUsuario));
             this.lbl_nomUsuario = new System.Windows.Forms.Label();
             this.lbl_Contrseña = new System.Windows.Forms.Label();
             this.lbl_ConfirmContrseña = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.txt_confirmContraseña = new System.Windows.Forms.TextBox();
             this.btn_CrearUsuario = new System.Windows.Forms.Button();
             this.link_Regresar = new System.Windows.Forms.LinkLabel();
+            this.pictureBox_RegUsuariosC = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_RegUsuariosC)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_nomUsuario
@@ -122,11 +125,23 @@
             this.link_Regresar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.link_Regresar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_Regresar_LinkClicked);
             // 
+            // pictureBox_RegUsuariosC
+            // 
+            this.pictureBox_RegUsuariosC.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_RegUsuariosC.Image")));
+            this.pictureBox_RegUsuariosC.Location = new System.Drawing.Point(398, 36);
+            this.pictureBox_RegUsuariosC.Name = "pictureBox_RegUsuariosC";
+            this.pictureBox_RegUsuariosC.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox_RegUsuariosC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_RegUsuariosC.TabIndex = 8;
+            this.pictureBox_RegUsuariosC.TabStop = false;
+            this.pictureBox_RegUsuariosC.Click += new System.EventHandler(this.pictureBox_RegUsuariosC_Click);
+            // 
             // Form_CrearUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 359);
+            this.Controls.Add(this.pictureBox_RegUsuariosC);
             this.Controls.Add(this.link_Regresar);
             this.Controls.Add(this.btn_CrearUsuario);
             this.Controls.Add(this.txt_confirmContraseña);
@@ -135,8 +150,10 @@
             this.Controls.Add(this.lbl_ConfirmContrseña);
             this.Controls.Add(this.lbl_Contrseña);
             this.Controls.Add(this.lbl_nomUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_CrearUsuario";
             this.Text = "Form_CrearUsuario";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_RegUsuariosC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +169,6 @@
         private System.Windows.Forms.TextBox txt_confirmContraseña;
         private System.Windows.Forms.Button btn_CrearUsuario;
         private System.Windows.Forms.LinkLabel link_Regresar;
+        private System.Windows.Forms.PictureBox pictureBox_RegUsuariosC;
     }
 }

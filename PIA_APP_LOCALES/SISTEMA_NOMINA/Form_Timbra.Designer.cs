@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Timbra));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Regresar = new System.Windows.Forms.Button();
+            this.pictureBox_SalirMenu = new System.Windows.Forms.PictureBox();
+            this.lbl_NomEmpresa = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel_DatosEmpl = new System.Windows.Forms.Panel();
             this.lbl_DatosEmpl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,12 +60,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.cb_Percepciones = new System.Windows.Forms.ComboBox();
             this.dataGV_Percepciones = new System.Windows.Forms.DataGridView();
-            this.col_Percepcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ClavePer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_DescripcionPer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ImportePer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cb_Percepciones = new System.Windows.Forms.ComboBox();
             this.btn_AgregarPer = new System.Windows.Forms.Button();
             this.txt_ImportePer = new System.Windows.Forms.TextBox();
             this.txt_DescPer = new System.Windows.Forms.TextBox();
@@ -73,8 +76,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.lbl_concepto = new System.Windows.Forms.Label();
-            this.lbl_motno = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGV_Deducciones = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +87,6 @@
             this.txt_ClaveDed = new System.Windows.Forms.TextBox();
             this.txt_importeDed = new System.Windows.Forms.TextBox();
             this.txt_DescDed = new System.Windows.Forms.TextBox();
-            this.lb_Montos = new System.Windows.Forms.ListBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lbl_OP_Importe = new System.Windows.Forms.Label();
             this.lbl_OP = new System.Windows.Forms.Label();
@@ -108,11 +108,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_TotalOP = new System.Windows.Forms.Label();
-            this.btn_Calcular = new System.Windows.Forms.Button();
             this.lbl_TotalPer = new System.Windows.Forms.Label();
             this.lbl_TotalDed = new System.Windows.Forms.Label();
             this.lbl_TotalNeto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SalirMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_DatosEmpl.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -130,24 +131,49 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_Regresar);
+            this.panel1.Controls.Add(this.pictureBox_SalirMenu);
+            this.panel1.Controls.Add(this.lbl_NomEmpresa);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 67);
+            this.panel1.Size = new System.Drawing.Size(1095, 67);
             this.panel1.TabIndex = 0;
             // 
-            // btn_Regresar
+            // pictureBox_SalirMenu
             // 
-            this.btn_Regresar.Location = new System.Drawing.Point(30, 21);
-            this.btn_Regresar.Name = "btn_Regresar";
-            this.btn_Regresar.Size = new System.Drawing.Size(174, 23);
-            this.btn_Regresar.TabIndex = 0;
-            this.btn_Regresar.Text = "Regresar";
-            this.btn_Regresar.UseVisualStyleBackColor = true;
-            this.btn_Regresar.Click += new System.EventHandler(this.btn_Regresar_Click);
+            this.pictureBox_SalirMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_SalirMenu.Image")));
+            this.pictureBox_SalirMenu.Location = new System.Drawing.Point(1042, 14);
+            this.pictureBox_SalirMenu.Name = "pictureBox_SalirMenu";
+            this.pictureBox_SalirMenu.Size = new System.Drawing.Size(39, 37);
+            this.pictureBox_SalirMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_SalirMenu.TabIndex = 3;
+            this.pictureBox_SalirMenu.TabStop = false;
+            this.pictureBox_SalirMenu.Click += new System.EventHandler(this.pictureBox_SalirMenu_Click);
+            // 
+            // lbl_NomEmpresa
+            // 
+            this.lbl_NomEmpresa.AutoSize = true;
+            this.lbl_NomEmpresa.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NomEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_NomEmpresa.Location = new System.Drawing.Point(101, 26);
+            this.lbl_NomEmpresa.Name = "lbl_NomEmpresa";
+            this.lbl_NomEmpresa.Size = new System.Drawing.Size(247, 25);
+            this.lbl_NomEmpresa.TabIndex = 2;
+            this.lbl_NomEmpresa.Text = "Nombre de la Empresa";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(45, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Panel_DatosEmpl
             // 
@@ -156,7 +182,7 @@
             this.Panel_DatosEmpl.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_DatosEmpl.Location = new System.Drawing.Point(0, 67);
             this.Panel_DatosEmpl.Name = "Panel_DatosEmpl";
-            this.Panel_DatosEmpl.Size = new System.Drawing.Size(1112, 45);
+            this.Panel_DatosEmpl.Size = new System.Drawing.Size(1095, 45);
             this.Panel_DatosEmpl.TabIndex = 1;
             // 
             // lbl_DatosEmpl
@@ -180,7 +206,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1112, 33);
+            this.panel2.Size = new System.Drawing.Size(1095, 33);
             this.panel2.TabIndex = 2;
             // 
             // txt_NomEmpleado
@@ -222,7 +248,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 145);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1112, 54);
+            this.panel3.Size = new System.Drawing.Size(1095, 54);
             this.panel3.TabIndex = 3;
             // 
             // lbl_Nomina
@@ -250,7 +276,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 199);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1112, 56);
+            this.panel4.Size = new System.Drawing.Size(1095, 56);
             this.panel4.TabIndex = 4;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -328,7 +354,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 255);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1112, 47);
+            this.panel5.Size = new System.Drawing.Size(1095, 47);
             this.panel5.TabIndex = 5;
             // 
             // label4
@@ -378,8 +404,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel6.Controls.Add(this.cb_Percepciones);
             this.panel6.Controls.Add(this.dataGV_Percepciones);
+            this.panel6.Controls.Add(this.cb_Percepciones);
             this.panel6.Controls.Add(this.btn_AgregarPer);
             this.panel6.Controls.Add(this.txt_ImportePer);
             this.panel6.Controls.Add(this.txt_DescPer);
@@ -388,62 +414,75 @@
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.Location = new System.Drawing.Point(0, 302);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1112, 151);
+            this.panel6.Size = new System.Drawing.Size(1095, 151);
             this.panel6.TabIndex = 6;
+            // 
+            // dataGV_Percepciones
+            // 
+            this.dataGV_Percepciones.AllowUserToResizeColumns = false;
+            this.dataGV_Percepciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGV_Percepciones.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGV_Percepciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGV_Percepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGV_Percepciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.dataGV_Percepciones.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGV_Percepciones.Location = new System.Drawing.Point(45, 47);
+            this.dataGV_Percepciones.Name = "dataGV_Percepciones";
+            this.dataGV_Percepciones.Size = new System.Drawing.Size(996, 87);
+            this.dataGV_Percepciones.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Percepcion";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Clave";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 550;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Importe";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 102;
             // 
             // cb_Percepciones
             // 
+            this.cb_Percepciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Percepciones.FormattingEnabled = true;
             this.cb_Percepciones.Items.AddRange(new object[] {
-            "Sueldos y salarios",
-            "Glatificacion Anual",
+            "Sueldos, Salarios Rayas y Jornales",
+            "Gratificación Anual (Aguinaldo)",
+            "Participación de los Trabajadores en las Utilidades PTU",
             "Fondo de Ahorro",
-            "Caja de Ahorro"});
+            "Caja de ahorro ",
+            "Contribuciones a Cargo del Trabajador Pagadas por el",
+            "Patrón ",
+            "Premios por puntualidad ",
+            "Prima de Seguro de vida",
+            "Seguro de Gastos Médicos Mayores",
+            "Cuotas Sindicales Pagadas por el Patrón",
+            "Subsidios por incapacidad",
+            "Becas para trabajadores y/ o hijos",
+            "Horas extras",
+            "Prima dominical",
+            "Prima vacacional "});
             this.cb_Percepciones.Location = new System.Drawing.Point(47, 8);
             this.cb_Percepciones.Name = "cb_Percepciones";
             this.cb_Percepciones.Size = new System.Drawing.Size(171, 23);
             this.cb_Percepciones.TabIndex = 6;
-            // 
-            // dataGV_Percepciones
-            // 
-            this.dataGV_Percepciones.AllowDrop = true;
-            this.dataGV_Percepciones.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGV_Percepciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGV_Percepciones.CausesValidation = false;
-            this.dataGV_Percepciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV_Percepciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_Percepcion,
-            this.col_ClavePer,
-            this.col_DescripcionPer,
-            this.col_ImportePer});
-            this.dataGV_Percepciones.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGV_Percepciones.Location = new System.Drawing.Point(47, 46);
-            this.dataGV_Percepciones.Name = "dataGV_Percepciones";
-            this.dataGV_Percepciones.Size = new System.Drawing.Size(993, 86);
-            this.dataGV_Percepciones.TabIndex = 5;
-            // 
-            // col_Percepcion
-            // 
-            this.col_Percepcion.HeaderText = "Percepcion";
-            this.col_Percepcion.Name = "col_Percepcion";
-            this.col_Percepcion.Width = 200;
-            // 
-            // col_ClavePer
-            // 
-            this.col_ClavePer.HeaderText = "Clave";
-            this.col_ClavePer.Name = "col_ClavePer";
-            // 
-            // col_DescripcionPer
-            // 
-            this.col_DescripcionPer.HeaderText = "Descripcion";
-            this.col_DescripcionPer.Name = "col_DescripcionPer";
-            this.col_DescripcionPer.Width = 550;
-            // 
-            // col_ImportePer
-            // 
-            this.col_ImportePer.HeaderText = "Importe";
-            this.col_ImportePer.Name = "col_ImportePer";
-            this.col_ImportePer.Width = 102;
             // 
             // btn_AgregarPer
             // 
@@ -457,6 +496,7 @@
             // 
             // txt_ImportePer
             // 
+            this.txt_ImportePer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ImportePer.Location = new System.Drawing.Point(786, 8);
             this.txt_ImportePer.Name = "txt_ImportePer";
             this.txt_ImportePer.Size = new System.Drawing.Size(120, 21);
@@ -464,6 +504,7 @@
             // 
             // txt_DescPer
             // 
+            this.txt_DescPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DescPer.Location = new System.Drawing.Point(370, 8);
             this.txt_DescPer.Name = "txt_DescPer";
             this.txt_DescPer.Size = new System.Drawing.Size(378, 21);
@@ -471,6 +512,7 @@
             // 
             // txt_ClavePer
             // 
+            this.txt_ClavePer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ClavePer.Location = new System.Drawing.Point(243, 8);
             this.txt_ClavePer.Name = "txt_ClavePer";
             this.txt_ClavePer.Size = new System.Drawing.Size(105, 21);
@@ -486,7 +528,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 453);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1112, 48);
+            this.panel7.Size = new System.Drawing.Size(1095, 48);
             this.panel7.TabIndex = 7;
             // 
             // label5
@@ -537,31 +579,13 @@
             // 
             this.btn_agregar.AllowDrop = true;
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.Location = new System.Drawing.Point(850, 887);
+            this.btn_agregar.Location = new System.Drawing.Point(792, 875);
             this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(188, 44);
+            this.btn_agregar.Size = new System.Drawing.Size(249, 44);
             this.btn_agregar.TabIndex = 8;
             this.btn_agregar.Text = "Generar Recibo";
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // lbl_concepto
-            // 
-            this.lbl_concepto.AutoSize = true;
-            this.lbl_concepto.Location = new System.Drawing.Point(815, 984);
-            this.lbl_concepto.Name = "lbl_concepto";
-            this.lbl_concepto.Size = new System.Drawing.Size(35, 13);
-            this.lbl_concepto.TabIndex = 9;
-            this.lbl_concepto.Text = "label9";
-            // 
-            // lbl_motno
-            // 
-            this.lbl_motno.AutoSize = true;
-            this.lbl_motno.Location = new System.Drawing.Point(815, 956);
-            this.lbl_motno.Name = "lbl_motno";
-            this.lbl_motno.Size = new System.Drawing.Size(41, 13);
-            this.lbl_motno.TabIndex = 13;
-            this.lbl_motno.Text = "label12";
             // 
             // panel8
             // 
@@ -575,7 +599,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 501);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1112, 158);
+            this.panel8.Size = new System.Drawing.Size(1095, 158);
             this.panel8.TabIndex = 14;
             // 
             // dataGV_Deducciones
@@ -613,7 +637,7 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Percepcion";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Deduccion";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 200;
             // 
@@ -639,7 +663,9 @@
             this.cb_Deducciones.FormattingEnabled = true;
             this.cb_Deducciones.Items.AddRange(new object[] {
             "ISR",
-            "Faltas"});
+            "Seguro Social",
+            "Faltas",
+            "Anticipo de salarios"});
             this.cb_Deducciones.Location = new System.Drawing.Point(48, 6);
             this.cb_Deducciones.Name = "cb_Deducciones";
             this.cb_Deducciones.Size = new System.Drawing.Size(171, 21);
@@ -676,14 +702,6 @@
             this.txt_DescDed.Size = new System.Drawing.Size(378, 20);
             this.txt_DescDed.TabIndex = 14;
             // 
-            // lb_Montos
-            // 
-            this.lb_Montos.FormattingEnabled = true;
-            this.lb_Montos.Location = new System.Drawing.Point(889, 947);
-            this.lb_Montos.Name = "lb_Montos";
-            this.lb_Montos.Size = new System.Drawing.Size(120, 95);
-            this.lb_Montos.TabIndex = 15;
-            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(42)))), ((int)(((byte)(67)))));
@@ -694,7 +712,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 659);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1112, 48);
+            this.panel9.Size = new System.Drawing.Size(1095, 48);
             this.panel9.TabIndex = 16;
             // 
             // lbl_OP_Importe
@@ -752,7 +770,7 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 707);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1112, 157);
+            this.panel10.Size = new System.Drawing.Size(1095, 157);
             this.panel10.TabIndex = 17;
             // 
             // dataGV_OtrosPagos
@@ -779,7 +797,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Percepcion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Otros Pagos";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 200;
             // 
@@ -804,8 +822,9 @@
             // 
             this.cb_TipoOp.FormattingEnabled = true;
             this.cb_TipoOp.Items.AddRange(new object[] {
-            "ISR",
-            "Faltas"});
+            "Subsidio para el empleo",
+            "Reintegro de ISR pagado en exceso",
+            "Pagos distintos a los listados"});
             this.cb_TipoOp.Location = new System.Drawing.Point(48, 6);
             this.cb_TipoOp.Name = "cb_TipoOp";
             this.cb_TipoOp.Size = new System.Drawing.Size(171, 21);
@@ -846,7 +865,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(45, 887);
+            this.label9.Location = new System.Drawing.Point(45, 875);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(147, 16);
             this.label9.TabIndex = 18;
@@ -856,7 +875,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(240, 887);
+            this.label10.Location = new System.Drawing.Point(240, 875);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(142, 16);
             this.label10.TabIndex = 19;
@@ -866,7 +885,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(443, 887);
+            this.label11.Location = new System.Drawing.Point(443, 875);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(137, 16);
             this.label11.TabIndex = 20;
@@ -876,7 +895,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(652, 887);
+            this.label13.Location = new System.Drawing.Point(652, 875);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 16);
             this.label13.TabIndex = 22;
@@ -886,26 +905,16 @@
             // lbl_TotalOP
             // 
             this.lbl_TotalOP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalOP.Location = new System.Drawing.Point(443, 915);
+            this.lbl_TotalOP.Location = new System.Drawing.Point(443, 897);
             this.lbl_TotalOP.Name = "lbl_TotalOP";
             this.lbl_TotalOP.Size = new System.Drawing.Size(154, 16);
             this.lbl_TotalOP.TabIndex = 25;
             this.lbl_TotalOP.Text = "$-";
             // 
-            // btn_Calcular
-            // 
-            this.btn_Calcular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Calcular.Location = new System.Drawing.Point(580, 974);
-            this.btn_Calcular.Name = "btn_Calcular";
-            this.btn_Calcular.Size = new System.Drawing.Size(75, 23);
-            this.btn_Calcular.TabIndex = 28;
-            this.btn_Calcular.Text = "Calcular";
-            this.btn_Calcular.UseVisualStyleBackColor = true;
-            // 
             // lbl_TotalPer
             // 
             this.lbl_TotalPer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalPer.Location = new System.Drawing.Point(45, 915);
+            this.lbl_TotalPer.Location = new System.Drawing.Point(45, 897);
             this.lbl_TotalPer.Name = "lbl_TotalPer";
             this.lbl_TotalPer.Size = new System.Drawing.Size(160, 15);
             this.lbl_TotalPer.TabIndex = 30;
@@ -914,7 +923,7 @@
             // lbl_TotalDed
             // 
             this.lbl_TotalDed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalDed.Location = new System.Drawing.Point(243, 915);
+            this.lbl_TotalDed.Location = new System.Drawing.Point(243, 897);
             this.lbl_TotalDed.Name = "lbl_TotalDed";
             this.lbl_TotalDed.Size = new System.Drawing.Size(157, 16);
             this.lbl_TotalDed.TabIndex = 31;
@@ -923,7 +932,7 @@
             // lbl_TotalNeto
             // 
             this.lbl_TotalNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalNeto.Location = new System.Drawing.Point(652, 915);
+            this.lbl_TotalNeto.Location = new System.Drawing.Point(652, 897);
             this.lbl_TotalNeto.Name = "lbl_TotalNeto";
             this.lbl_TotalNeto.Size = new System.Drawing.Size(119, 16);
             this.lbl_TotalNeto.TabIndex = 33;
@@ -934,11 +943,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1129, 649);
+            this.ClientSize = new System.Drawing.Size(1112, 680);
             this.Controls.Add(this.lbl_TotalNeto);
             this.Controls.Add(this.lbl_TotalDed);
             this.Controls.Add(this.lbl_TotalPer);
-            this.Controls.Add(this.btn_Calcular);
             this.Controls.Add(this.lbl_TotalOP);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
@@ -946,10 +954,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.lb_Montos);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.lbl_motno);
-            this.Controls.Add(this.lbl_concepto);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -959,10 +964,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.Panel_DatosEmpl);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Timbra";
             this.Text = "Form_Timbra";
             this.Load += new System.EventHandler(this.Form_Timbra_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SalirMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel_DatosEmpl.ResumeLayout(false);
             this.Panel_DatosEmpl.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -1018,12 +1027,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DataGridView dataGV_Percepciones;
         private System.Windows.Forms.Button btn_AgregarPer;
         private System.Windows.Forms.TextBox txt_ImportePer;
         private System.Windows.Forms.TextBox txt_DescPer;
         private System.Windows.Forms.TextBox txt_ClavePer;
-        private System.Windows.Forms.Button btn_Regresar;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
@@ -1031,8 +1038,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cb_Percepciones;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.Label lbl_concepto;
-        private System.Windows.Forms.Label lbl_motno;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ComboBox cb_Deducciones;
         private System.Windows.Forms.Button btn_AgregarDed;
@@ -1040,7 +1045,6 @@
         private System.Windows.Forms.TextBox txt_importeDed;
         private System.Windows.Forms.TextBox txt_DescDed;
         private System.Windows.Forms.DataGridView dataGV_Deducciones;
-        private System.Windows.Forms.ListBox lb_Montos;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lbl_OP_Importe;
         private System.Windows.Forms.Label lbl_OP;
@@ -1058,14 +1062,17 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbl_TotalOP;
-        private System.Windows.Forms.Button btn_Calcular;
         private System.Windows.Forms.Label lbl_TotalPer;
         private System.Windows.Forms.Label lbl_TotalDed;
         private System.Windows.Forms.Label lbl_TotalNeto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Percepcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ClavePer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_DescripcionPer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ImportePer;
+        private System.Windows.Forms.DataGridView dataGV_Percepciones;
+        private System.Windows.Forms.PictureBox pictureBox_SalirMenu;
+        private System.Windows.Forms.Label lbl_NomEmpresa;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -50,6 +50,23 @@ namespace SISTEMA_NOMINA
             FormAdminUsuario.Show();
         }
 
+        private void lbl_UsuariosCreados_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_UsuariosCreados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox_RegLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Login FormLogin = new Form_Login();
+            FormLogin.Show();
+        }
+
         //public dynamic UsuarioSlecionado()
         //{
         //    if (lb_UsuariosCreados.SelectedIndex != -1)
@@ -57,7 +74,7 @@ namespace SISTEMA_NOMINA
         //        dynamic UsuarioSelect = (string)lb_UsuariosCreados.Items[lb_UsuariosCreados.SelectedIndex];
         //        return UsuarioSelect;
         //    }
-            
+
         //}
     }
 }

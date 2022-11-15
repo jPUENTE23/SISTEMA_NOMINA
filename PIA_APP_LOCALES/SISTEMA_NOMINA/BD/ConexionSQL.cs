@@ -237,7 +237,7 @@ namespace SISTEMA_NOMINA.BD
 
                 cmd.Parameters.AddWithValue("@Id_Usuario", DU_IdUsuario);
                 SqlDataReader List_DU_IdUsuario = cmd.ExecuteReader();
-          
+                cmd.Parameters.Clear();
                 return List_DU_IdUsuario;
             }
 
@@ -278,13 +278,22 @@ namespace SISTEMA_NOMINA.BD
                 cmd.Parameters.AddWithValue("@Otros_Pagos", Otros_Pagos);
                 cmd.Parameters.AddWithValue("@Neto", Neto);
                 cmd.Parameters.AddWithValue("@ID_Empresa", ID_Empresa);
-
+                
                 SqlDataReader Id_Recibo = cmd.ExecuteReader();
-
+                cmd.Parameters.Clear();
+                //Id_Recibo.Close();
                 return Id_Recibo;
             }
 
-            public void RelacionarConcepto (
+            
+        }
+
+        public class Concepto
+        {
+            Conexion ConnConcepto = new Conexion();
+            SqlCommand cmd = new SqlCommand();
+
+            public void RelacionarConcepto(
                 string TipoConcepto,
                 dynamic NomConcepto,
                 int Clave,
@@ -292,7 +301,7 @@ namespace SISTEMA_NOMINA.BD
                 double ImporteConcepto,
                 int Id_Recibo)
             {
-                cmd.Connection = GenRec_Conn.AbrirConexioBD();
+                cmd.Connection = ConnConcepto.AbrirConexioBD();
                 cmd.CommandText = "SP_RELACIONAR_CONCEPTO";
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -306,7 +315,7 @@ namespace SISTEMA_NOMINA.BD
 
                 cmd.Parameters.Clear();
 
-                GenRec_Conn.CerrarConexionnBD();
+                ConnConcepto.CerrarConexionnBD();
             }
         }
 
@@ -322,10 +331,36 @@ namespace SISTEMA_NOMINA.BD
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@IdEmprsa", IdEmpresa);
-
+                
                 SqlDataReader Recibos = cmd.ExecuteReader();
-
+                cmd.Parameters.Clear();
                 return Recibos;
+            }
+
+            public SqlDataReader BuscarReciboRFC (dynamic RFC)
+            {
+                cmd.Connection = Conn.AbrirConexioBD();
+                cmd.CommandText = "SP_RECIBO_EMPLEADO";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@RFC_Empleado", RFC);
+
+                SqlDataReader reciboRfc = cmd.ExecuteReader();
+                cmd.Parameters.Clear();
+                return reciboRfc;
+            }
+
+            public SqlDataReader ListarRecibosMenu(int idEmpresa)
+            {
+                cmd.Connection = Conn.AbrirConexioBD();
+                cmd.CommandText = "SP_RECIBOS_RE";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IdEmpresa", idEmpresa);
+                
+                SqlDataReader ListarRec = cmd.ExecuteReader();
+                cmd.Parameters.Clear();
+                return ListarRec;
             }
         }
     }
