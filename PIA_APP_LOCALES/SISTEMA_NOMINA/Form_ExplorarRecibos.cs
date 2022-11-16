@@ -29,27 +29,29 @@ namespace SISTEMA_NOMINA
             SqlDataReader Recibos = ConnRecibos.ExplorarRecibos(this.idEmpresa);
 
 
-            if (Recibos.Read())
+            int indexRecibos;
+            while (Recibos.Read())
             {
-                int indexRecibos;
-                while (Recibos.Read())
-                {
-                    indexRecibos = dataGV_ExplorearRec.Rows.Add();
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[0].Value = Recibos["ID_Recibo"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[1].Value = Recibos["RFC_Empl"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[2].Value = Recibos["Nom_Empl"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[3].Value = Recibos["Fecha_Pago"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[4].Value = Recibos["Fecha_Emision"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[5].Value = Recibos["Fecha_Inicial"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[6].Value = Recibos["Fecha_Final"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[7].Value = Recibos["Dias_Pagados"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[8].Value = Recibos["Percepciones"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[9].Value = Recibos["Deducciones"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[10].Value = Recibos["Otros_Pagos"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[11].Value = Recibos["Neto"];
-                    dataGV_ExplorearRec.Rows[indexRecibos].Cells[12].Value = Recibos["RFC_Empresa"];
-                }
+                indexRecibos = dataGV_ExplorearRec.Rows.Add();
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[0].Value = Recibos["ID_Recibo"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[1].Value = Recibos["RFC_Empl"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[2].Value = Recibos["Nom_Empl"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[3].Value = Recibos["Fecha_Pago"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[4].Value = Recibos["Fecha_Emision"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[5].Value = Recibos["Fecha_Inicial"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[6].Value = Recibos["Fecha_Final"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[7].Value = Recibos["Dias_Pagados"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[8].Value = Recibos["Percepciones"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[9].Value = Recibos["Deducciones"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[10].Value = Recibos["Otros_Pagos"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[11].Value = Recibos["Neto"];
+                dataGV_ExplorearRec.Rows[indexRecibos].Cells[12].Value = Recibos["RFC_Empresa"];
             }
+
+            //if (Recibos.Read())
+            //{
+                
+            //}
 
             //SqlDataReader idEmpresa = ConnEmpresas.ID_Empresa(this.Empresa);
 

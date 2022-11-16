@@ -29,18 +29,22 @@ namespace SISTEMA_NOMINA
             //SqlDataReader idEmpresa = ConnEmpresa.ID_Empresa(this.ConectEmpresa);
             //int EmpresaID = Convert.ToInt16(idEmpresa["ID_Empresa"]);
             SqlDataReader RecibosRec = ConnRecibos.ListarRecibosMenu(this.idEmpresa);
-            if (RecibosRec.Read())
+
+            int indexRecibos;
+            while (RecibosRec.Read())
             {
-                int indexRecibos;
-                while (RecibosRec.Read())
-                {
-                    indexRecibos = dataGV_RecibosMenu.Rows.Add();
-                    dataGV_RecibosMenu.Rows[indexRecibos].Cells[0].Value = RecibosRec["ID_Recibo"];
-                    dataGV_RecibosMenu.Rows[indexRecibos].Cells[1].Value = RecibosRec["RFC_Empl"];
-                    dataGV_RecibosMenu.Rows[indexRecibos].Cells[2].Value = RecibosRec["Nom_Empl"];
-                    dataGV_RecibosMenu.Rows[indexRecibos].Cells[3].Value = RecibosRec["Fecha_Emision"];
-                }
+                indexRecibos = dataGV_RecibosMenu.Rows.Add();
+                dataGV_RecibosMenu.Rows[indexRecibos].Cells[0].Value = RecibosRec["ID_Recibo"];
+                dataGV_RecibosMenu.Rows[indexRecibos].Cells[1].Value = RecibosRec["RFC_Empl"];
+                dataGV_RecibosMenu.Rows[indexRecibos].Cells[2].Value = RecibosRec["Nom_Empl"];
+                dataGV_RecibosMenu.Rows[indexRecibos].Cells[3].Value = RecibosRec["Fecha_Emision"];
             }
+
+            //if (RecibosRec.Read())
+            //{
+
+              
+            //}
             //if (idEmpresa.Read())
             //{
                 
